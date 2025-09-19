@@ -1,7 +1,13 @@
+import NavItem from './components/navbar/navItem';
+import ScreenSizeIndicator from './components/ScreenSizeIndicator';
 function App() {
   return (
     <>
-      <h1 className="text-primary text-3xl">hello world</h1>
+    <div>
+      <NavItem />
+      <ScreenSizeIndicator />
+
+    </div>
     </>
   );
 }

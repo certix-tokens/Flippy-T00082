@@ -2,9 +2,12 @@
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
+ 
+
 
 @theme inline {
   /* Existing radius variables */
+  --font-poppins: JejuHallasan, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -248,4 +251,32 @@
   :focus-visible {
     @apply outline-ring outline-2 outline-offset-2;
   }
+}
+
+@font-face {
+  font-family: 'Jeju Hallasan';
+  src: url('./assets/font/JejuHallasan-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Jacques Francois Shadow';
+  src: url('./assets/font/JacquesFrancoisShadow-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+.font-jel{
+  font-family:jeju Hallasan, sans-serif;
+}
+
+
+
+
+.jac{
+  font-family:Jacques Francois Shadow, serif;
+ 
 }
