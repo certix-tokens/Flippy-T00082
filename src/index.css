@@ -4,6 +4,9 @@
 
 @custom-variant dark (&:is(.dark *));
  
+.font-jacks {
+  font-family: Jacques Francois Shadow, serif;
+}
 
 
 @theme inline {
