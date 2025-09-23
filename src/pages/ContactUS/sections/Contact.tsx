@@ -16,7 +16,8 @@ function Contact() {
         <h1 className='font-jacks text-white font-normal text-[40px]  md:text-[150px]'>ABOUT US</h1>
       </div>
 
-      <div className='flex justify-center'>
+
+      <div className='flex justify-center '>
         <img src={Aboutus} alt="" className='absolute md:w-[448px] md:h-[448px] md:bottom-40 bottom-45 w-[300px] h-[300px]' />
         <img src={Pengleft} alt="" className='absolute left-0 bottom-45 md:hidden block' />
         <img src={Pengright} alt="" className='absolute right-0 bottom-45 md:hidden block ' />

@@ -8,11 +8,11 @@ type Item = {
 
 const items: Item[] = [
   { name: 'HOME' ,path:'/'},
-  { name: 'About us',path:'/abc' },
-  { name: 'How to Buy',path:'/' },
-  { name: 'Road Map',path:'/' },
-  { name: 'Tokenomics' ,path:'/'},
-  { name: 'Join Community',path:'/' },
+  { name: 'About us',path:'/about_us' },
+  { name: 'How to Buy',path:'/how-to-buy' },
+  { name: 'Road Map',path:'/road-map' },
+  { name: 'Tokenomics' ,path:'/toke'},
+  { name: 'Join Community',path:'/join' },
 ];
 
 function NavItem() {
