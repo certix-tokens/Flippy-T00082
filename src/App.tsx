@@ -1,6 +1,6 @@
 import NavItem from './components/navbar/navItem';
 import ScreenSizeIndicator from './components/ScreenSizeIndicator';
-import Home from './pages/pageA/index'
+import Home from './pages/Home/index'
 import Footer from './components/navbar/footer'
 function App() {
   return (

@@ -20,7 +20,8 @@ function Home() {
     <div className="relative min-h-screen overflow-hidden">
       {/* Background Layer */}
       <div
-        className="absolute inset-0 scale-x-[-1] bg-cover bg-center"
+        className="absolute inset-0 scale-x-[-1] bg-cover              bg-[position:56%_center] 
+ md:bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
 
@@ -53,26 +54,27 @@ function Home() {
 
 
         {/* Text Section */}
-        <div className="mt-[470px] flex w-full justify-center px-2">
-          <div className="md:w-[1000px] w-[345px] h-[122px]rounded-lg bg-[#9318182B]/5 p-6 backdrop-blur-sm">
-            <p className="font-jel mb-[20px] px-4 text-[11px] md:text-[20px] font-medium text-white">
+        <div className="md:mt-[470px] mt-[604px] flex md:w-full w-[500px] justify-center px-2">
+          <div className="rounded-2xl md:w-[1000px] w-[345px] h-[122px]rounded-lg bg-[#9318182B]/17 p-6 backdrop-blur-sm">
+            <p className="hidden md:block font-jel mb-[20px] px-4 text-[11px] md:text-[20px] font-medium text-white">
               Welcome to Flippy!
             </p>
-            <p className="font-jel px-4 text-[11px] md:text-[20px] leading-8 font-medium text-white">
+            <p className="hidden md:block font-jel px-4 text-[11px] md:text-[20px] leading-8 font-medium text-white">
               Step into the spotlight of penguin-inspired tokens. Join Flippy
               and take center stage in the world of crypto, where excitement
               meets creativity! Waddle your way to exclusive rewards, connect
               with a vibrant community, and shine with every performance.
             </p>
+            <p className='text-[11px] text-white font-jel md:hidden'>This is a short explanation. Flippy is a fun and interactive platform. Keep it short, clear, and engaging to capture attention. Flippy is a fun and interactive platform. Keep it short, clear, and engaging to capture attention. This is a short explanation. Make it short and clear to keep students attentive. This is a short explanation.</p>
           </div>
         </div>
 
         {/* Buttons Section */}
         <div className="flex mt-6  gap-[89px] hidden  md:flex">
-          <button className="h-[44px] w-[129px] rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B] via-[#9B282F] to-[#B13940] text-white">
+          <button className="h-[66px] w-[173px] rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B]  via-[#9B282F]  to-[#B13940] text-white font-jel text-[24px]">
             Join Now
           </button>
-          <button className="h-[44px] w-[129px] rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B] via-[#9B282F] to-[#B13940] text-white">
+          <button className="h-[66px] w-[173px] rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B] via-[#9B282F] to-[#B13940] text-white font-jel text-[24px]">
             Buy Now
           </button>
         </div>
@@ -82,7 +84,7 @@ function Home() {
               <img
                 src={item.path}
                 alt=""
-                className="mt-[36px] h-[40px] w-[40px]"
+                className="mt-[36px] h-[40px] w-[40px] mb-4 md:mb-0"
               />
             </div>
           ))}

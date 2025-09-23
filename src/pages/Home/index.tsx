@@ -1,4 +1,4 @@
-import Home from '../pageA/sections/Home'
+import Home from '../Home/sections/Home'
 
 function index() {
   return (
