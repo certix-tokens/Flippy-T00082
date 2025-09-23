@@ -3,22 +3,23 @@ import Plogo from '../../assets/Images/plogo.png';
 import Close from '../../assets/Images/Vector.png'
 type Item = {
   name: string;
+  path:string;
 };
 
 const items: Item[] = [
-  { name: 'HOME' },
-  { name: 'About us' },
-  { name: 'How to Buy' },
-  { name: 'Road Map' },
-  { name: 'Tokenomics' },
-  { name: 'Join Community' },
+  { name: 'HOME' ,path:'/'},
+  { name: 'About us',path:'/abc' },
+  { name: 'How to Buy',path:'/' },
+  { name: 'Road Map',path:'/' },
+  { name: 'Tokenomics' ,path:'/'},
+  { name: 'Join Community',path:'/' },
 ];
 
 function NavItem() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative h-auto w-full bg-[#4B181B]">
+    <div className="relative h-auto w-full bg-[#4B181B] ">
       {/* Header */}
       <div className="relative z-50 flex items-center justify-between px-6 py-8 md:justify-center">
         {/* Logo on LEFT */}
@@ -31,7 +32,7 @@ function NavItem() {
         {/* Desktop Menu */}
         <nav className="font-jel hidden gap-[69px] text-[16px] font-normal text-white md:flex">
           {items.map((item) => (
-            <a key={item.name} href="#">
+            <a key={item.name} href={item.path}>
               {item.name}
             </a>
           ))}
@@ -82,7 +83,7 @@ function NavItem() {
         {items.map((item) => (
           <a
             key={item.name}
-            href="#"
+            href={item.path}
             className="font-jel flex h-[43px] w-[220px] items-center justify-center rounded-[20px] text-center text-[15px] font-normal text-white active:bg-[#E1363952]"
             onClick={() => setIsOpen(false)}
           >
