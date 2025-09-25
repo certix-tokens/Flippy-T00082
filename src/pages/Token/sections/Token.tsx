@@ -7,7 +7,9 @@ function Token() {
  md:bg-center"
         style={{ backgroundImage: `url(${Tokenbg})` }}>
             
-            
+            <div className='text-center mt-[155px]'>
+              <h1 className='font-jack text-5xl font-normal text-white md:text-7xl xl:text-8xl'>TOKENOMICS</h1>
+            </div>
 
         </div>
 
