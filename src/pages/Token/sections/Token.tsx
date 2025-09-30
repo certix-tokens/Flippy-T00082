@@ -10,19 +10,19 @@ function Token() {
         style={{ backgroundImage: `url(${Tokenbg})` }}>
             
             <div className='text-center mt-[100px]'>
-              <h1 className='font-jack text-5xl font-normal text-white md:text-[150px] xl:text-[198px]'>TOKENOMICS</h1>
+              <h1 className='font-jack text-[40px font-normal text-white md:text-[100px] xl:text-[150px]'>TOKENOMICS</h1>
             </div>
 
-            <div className='grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 place-items-center justify-center gap-6 w-full max-w-6xl mx-auto py-8'>
+            <div className='grid grid-cols-3    sm:grid-cols-3 lg:grid-cols-3 place-items-center justify-center gap-6 w-full max-w-6xl mx-auto py-8'>
 
               <div className='flex justify-center'>
-                <img src={Toke1} alt="Token 1" className='absolute top-[340px]' />
+                <img src={Toke1} alt="Token 1" className='absolute sm:top-100 top-120 xl:top-[400px] 2xl:top-[500px] w-[150px] h-auto sm:w-[300px] sm:h-auto' />
               </div>
               <div className='flex justify-center'>
-                <img src={Toke2} alt="Token 2" className='absolute top-110' />
+                <img src={Toke2} alt="Token 2" className='absolute sm:top-110 top-130 xl:top-110 2xl:top-[520px]  w-[150px] h-auto sm:w-[300px] sm:h-auto' />
               </div>
               <div className='flex justify-center'>
-                <img src={Toke3} alt="Token 3" className='absolute  top-[340px] ' />
+                <img src={Toke3} alt="Token 3" className='absolute sm:top-100 top-120  xl:top-[400px]  w-[150px] 2xl:top-[500px] h-auto sm:w-[300px] sm:h-auto' />
               </div>
 
             </div>
