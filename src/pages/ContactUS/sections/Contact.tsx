@@ -37,7 +37,7 @@ function Contact() {
   };
 
   return (
-    <div className="relative min-h-screen h-auto overflow-hidden">
+    <div className="relative min-h-screen h-auto">
       <motion.div
         className="absolute inset-0 bg-cover bg-[position:70%_center] md:bg-center"
         style={{ backgroundImage: `url(${Contactus})` }}
@@ -46,7 +46,7 @@ function Contact() {
         transition={{ duration: 1.2, ease: 'easeOut' }}
       >
         <div
-          className="flex flex-col items-center"
+          className="flex min-h-screen h-full overflow-hidden flex-col items-center"
           onMouseMove={handleMouseMove}
         >
           <div className="mt-[184px] text-center md:mt-[50px] lg:mt-[100px] xl:mt-[50px]">
@@ -134,7 +134,7 @@ function Contact() {
               </motion.div>
             </motion.div>
           </div>
-          <div className="group">
+          <div className="group overflow-hidden">
             <div className="mt-40 w-[400px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-8 py-18 text-center text-white md:hidden lg:hidden xl:hidden 2xl:hidden opacity-0 transition-opacity duration-300 group-active:opacity-100">
               <p className="font-jel text-[10px]">
                 This is a short explanation. Flippy is a fun and interactive

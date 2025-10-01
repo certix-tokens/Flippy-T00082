@@ -5,10 +5,13 @@ import X from '../../../assets/Images/twitter.png';
 import build from '../../../assets/Images/build.png';
 import Z from '../../../assets/Images/z.png';
 
+
 type Item = {
   path: string;
   alt?: string;
 };
+
+
 
 const items: Item[] = [
   { path: Tele, alt: 'Telegram' },
@@ -25,14 +28,7 @@ const container = {
   },
 };
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { type: 'spring', stiffness: 120, damping: 18 },
-  },
-};
+
 
 function Home() {
   return (
@@ -57,7 +53,7 @@ function Home() {
         <motion.svg
           viewBox="0 0 1200 400"
           className="absolute -top-16 left-1/2 -translate-x-1/2 w-[1200px] h-[400px]"
-          variants={fadeUp}
+          
         >
           {/* Curve Path */}
           <path id="curve" d="M 100 300 Q 600 0 1100 300" fill="transparent" />
@@ -81,7 +77,7 @@ function Home() {
         {/* Text Section */}
         <motion.div
           className="md:mt-[470px] mt-[604px] flex md:w-full w-[500px] justify-center px-2"
-          variants={fadeUp}
+         
         >
           <div className="rounded-2xl md:w-[1000px] w-[345px] h-auto bg-[#9318182B]/17 p-6 backdrop-blur-xs">
             <p className="hidden md:block font-jel mb-[20px] px-4 text-[11px] md:text-[20px] font-medium text-white">
@@ -100,7 +96,7 @@ function Home() {
         </motion.div>
 
         {/* Buttons Section */}
-        <motion.div className="flex mt-6  gap-[89px] hidden  md:flex" variants={fadeUp}>
+        <motion.div className="flex mt-6  gap-[89px] hidden  md:flex" >
           <motion.button
             className="h-[66px] w-[173px] rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B]  via-[#9B282F]  to-[#B13940] text-white font-jel text-[24px]"
             whileHover={{ scale: 1.05, y: -2, boxShadow: '0px 10px 25px rgba(0,0,0,0.25)' }}
@@ -122,7 +118,7 @@ function Home() {
         {/* Social Icons */}
         <motion.div className="grid grid-cols-4 gap-[36px]" variants={container}>
           {items.map((item, i) => (
-            <motion.div key={i} variants={fadeUp} className="flex items-center justify-center">
+            <motion.div key={i}  className="flex items-center justify-center">
               <motion.img
                 src={item.path}
                 alt={item.alt ?? ''}
