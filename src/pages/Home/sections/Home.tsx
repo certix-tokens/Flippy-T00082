@@ -36,7 +36,7 @@ const fadeUp = {
 
 function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen h-auto overflow-hidden">
       {/* Background Layer */}
       <motion.div
         className="absolute inset-0 scale-x-[-1] bg-cover              bg-[position:56%_center] 

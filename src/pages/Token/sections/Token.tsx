@@ -19,7 +19,7 @@ function Token() {
           {/* left image */}
 
           <div className="group flex justify-center">
-            <div className="mt-90 h-30 w-[260px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-10 py-10 text-center text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 lg:mt-40 lg:text-[15px] xl:mt-5 2xl:mt-40 md:mt-40 sm:mt-65">
+            <div className="mt-90 h-30 w-[260px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-10 py-10 text-center text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 lg:mt-40 lg:text-[15px] xl:mt-5 2xl:mt-40 md:mt-40 sm:mt-45">
               <p className="font-jel">0%</p>
               <p className="font-jel">Buy Tax</p>
             </div>

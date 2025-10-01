@@ -57,7 +57,7 @@ function Roadmap() {
           {/* image 2 */}
 
           <div className="group flex flex-row justify-center">
-            <div className="mt-40 h-50 w-[260px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-8 text-left text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:mt-50 md:h-40 md:w-[200px] md:px-6 lg:mt-55 lg:h-40 lg:w-[200px] lg:text-[15px] xl:mt-40 xl:h-50 2xl:mt-20 2xl:mr-10 2xl:h-50">
+            <div className="mt-40 h-50 w-[260px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-8 text-left text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:mt-50 md:h-40 md:w-[200px] md:px-6 lg:mt-55 lg:h-40 lg:w-[200px] lg:text-[15px] xl:mt-20 xl:h-50 2xl:mt-20 2xl:mr-10 2xl:h-50">
               <p className="font-jel text-center md:text-[12px] lg:text-[12px] xl:text-[16px]">
                 S-2
               </p>
@@ -69,14 +69,14 @@ function Roadmap() {
             <img
               src={Pen2}
               alt=""
-              className="absolute bottom-[230px] ml-10 group-hover:mb-[-70px] group-hover:h-auto group-hover:w-[180px] md:bottom-65 md:mr-30 md:h-auto md:w-30 md:group-hover:top-150 md:group-hover:w-30 xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-105 2xl:w-[222px] 2xl:group-hover:top-135 2xl:group-hover:w-[180px]"
+              className="absolute bottom-[230px] ml-10 group-hover:mb-[-70px] group-hover:h-auto group-hover:w-[180px] md:bottom-65 md:mr-30 md:h-auto md:w-30 md:group-hover:top-150 md:group-hover:w-30 xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-105 2xl:w-[222px] 2xl:group-hover:top-135 2xl:group-hover:w-[180px] xl:group-hover:top-129"
             />
           </div>
 
           {/* image 3 */}
 
           <div className="group flex flex-row justify-center">
-            <div className="mt-40 h-50 w-[260px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-8 text-left text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:mt-50 md:h-40 md:w-[200px] lg:mt-55 lg:h-40 lg:w-[200px] lg:text-[15px] xl:mt-40 xl:h-50 2xl:mt-30 2xl:h-50">
+            <div className="mt-40 h-50 w-[260px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-8 text-left text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:mt-50 md:h-40 md:w-[200px] lg:mt-55 lg:h-40 lg:w-[200px] lg:text-[15px] xl:mt-25 xl:h-50 2xl:mt-30 2xl:h-50">
               <p className="font-jel text-center md:text-[12px] lg:text-[12px] xl:text-[16px]">
                 S-3
               </p>
@@ -88,14 +88,14 @@ function Roadmap() {
             <img
               src={Pen3}
               alt=""
-              className="bottom-[200px absolute group-hover:mb-[-50px] group-hover:h-auto group-hover:w-[180px] md:top-135 md:mr-5 md:h-auto md:w-30 md:group-hover:top-150 md:group-hover:w-30 xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-110 2xl:w-[222px] 2xl:group-hover:top-140 2xl:group-hover:w-[180px]"
+              className="bottom-[200px absolute group-hover:mb-[-50px] group-hover:h-auto group-hover:w-[180px] md:top-135 md:mr-5 md:h-auto md:w-30 md:group-hover:top-150 md:group-hover:w-30 xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-110 xl:top-115 2xl:w-[222px] 2xl:group-hover:top-140 2xl:group-hover:w-[180px] xl:group-hover:top-135"
             />
           </div>
 
           {/* image 4 */}
 
           <div className="group flex flex-row justify-center">
-            <div className="mt-40 h-50 w-[260px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-8 text-left text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:mt-60 md:h-40 lg:mt-60 lg:h-40 lg:w-[200px] lg:text-[15px] xl:mt-45 xl:h-50 2xl:mt-35 2xl:h-50">
+            <div className="mt-40 h-50 w-[260px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-8 text-left text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:mt-60 md:h-40 lg:mt-60 lg:h-40 lg:w-[200px] lg:text-[15px] xl:mt-35 xl:h-50 2xl:mt-35 2xl:h-50">
               <p className="font-jel text-center md:text-[12px] lg:text-[12px] xl:text-[16px]">
                 S-4
               </p>
@@ -107,7 +107,7 @@ function Roadmap() {
             <img
               src={Pen4}
               alt=""
-              className="absolute bottom-[200px] group-hover:mb-[-50px] group-hover:h-auto group-hover:w-[180px] md:top-140 md:ml-30 md:h-auto md:w-30 md:group-hover:top-155 md:group-hover:w-30 xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-118 2xl:w-[222px] 2xl:group-hover:top-145 2xl:group-hover:w-[180px]"
+              className="absolute bottom-[200px] group-hover:mb-[-50px] group-hover:h-auto group-hover:w-[180px] md:top-140 md:ml-30 md:h-auto md:w-30 md:group-hover:top-155 md:group-hover:w-30 xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-118 xl:top-125 2xl:w-[222px] 2xl:group-hover:top-145 2xl:group-hover:w-[180px] xl:group-hover:top-140"
             />
           </div>
 
