@@ -37,7 +37,7 @@ function Contact() {
   };
 
   return (
-    <div className="relative w-full  min-h-screen overflow-visible">
+    <div className="relative w-full  min-h-screen overflow-hidden">
       <motion.div
         className="h-auto absolute inset-0 bg-cover bg-[position:70%_center] md:bg-center"
         style={{ backgroundImage: `url(${Contactus})` }}
@@ -145,7 +145,7 @@ function Contact() {
               <motion.img
                 src={pengif}
                 alt="Penguin mascot"
-                className="absolute mt-10 h-auto w-[200px] cursor-pointer md:mt-20 md:h-auto md:w-[200px] lg:mt-20 xl:mt-0 2xl:-mt-20 xl:h-[300px] xl:w-[300px]  2xl:-mb-20 2xl:h-auto 2xl:w-[280px]"
+                className="absolute mt-5 h-auto w-[200px] cursor-pointer md:mt-20 md:h-auto md:w-[200px] lg:mt-20 xl:mt-0 2xl:-mt-20 xl:h-[300px] xl:w-[300px]  2xl:-mb-20 2xl:h-auto 2xl:w-[280px]"
                 initial={{ x: '-60vw', opacity: 0, rotate: -20 }}
                 animate={{
                   x: 0,
@@ -181,7 +181,7 @@ function Contact() {
               <motion.img
                 src={Pengleft}
                 alt="Left decoration"
-                className="absolute mt-10  left-0 h-auto w-[100px] block md:hidden"
+                className="absolute  sm:-mt-5 mt-10  left-0 h-auto w-[100px] block md:hidden"
                 initial={{ x: -100, opacity: 0 }}
                 animate={{
                   x: 0,
@@ -201,7 +201,7 @@ function Contact() {
               <motion.img
                 src={Pengright}
                 alt="Right decoration"
-                className="absolute right-0 mt-10 h-auto w-[100px] block md:hidden"
+                className="absolute sm:-mt-5 right-0 mt-10 h-auto w-[100px] block md:hidden"
                 initial={{ x: 100, opacity: 0 }}
                 animate={{
                   x: 0,

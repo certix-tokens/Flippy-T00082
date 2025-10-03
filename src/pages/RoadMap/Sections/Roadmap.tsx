@@ -7,7 +7,7 @@ import Pen5 from '../../../assets/Images/5.png';
 
 function Roadmap() {
   return (
-    <div className="relative  h-[86vh] overflow-hidden">
+    <div className="relative min-h-screen">
       <div
         className="absolute inset-0 bg-cover bg-[position:70%_center] md:bg-center"
         style={{ backgroundImage: `url(${Roadmapbg})` }}
@@ -50,7 +50,7 @@ function Roadmap() {
             <img
               src={Pen1}
               alt=""
-              className="absolute bottom-30 group-hover:-mb-8 group-hover:h-auto group-hover:w-[180px] md:bottom-45 md:h-auto md:w-30 md:group-hover:-mr-40 md:group-hover:-mb-20 md:group-hover:w-30 xl:h-auto xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-130 2xl:w-[222px] 2xl:group-hover:top-150 2xl:group-hover:w-[180px]"
+              className="absolute mt-30 group-hover:-mb-8 group-hover:h-auto group-hover:w-[180px] md:bottom-45 md:h-auto md:w-30 md:group-hover:-mr-40 md:group-hover:-mb-20 md:group-hover:w-30 xl:h-auto xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-130 2xl:w-[222px] 2xl:group-hover:top-150 2xl:group-hover:w-[180px]"
             />
           </div>
 
@@ -69,7 +69,7 @@ function Roadmap() {
             <img
               src={Pen2}
               alt=""
-              className="absolute bottom-[230px] ml-10 group-hover:mb-[-70px] group-hover:h-auto group-hover:w-[180px] md:bottom-65 md:mr-30 md:h-auto md:w-30 md:group-hover:top-150 md:group-hover:w-30 xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-105 2xl:w-[222px] 2xl:group-hover:top-135 2xl:group-hover:w-[180px] xl:group-hover:top-129"
+              className="absolute mt-[230px] ml-10 group-hover:mb-[-70px] group-hover:h-auto group-hover:w-[180px] md:bottom-65 md:mr-30 md:h-auto md:w-30 md:group-hover:top-150 md:group-hover:w-30 xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-105 2xl:w-[222px] 2xl:group-hover:top-135 2xl:group-hover:w-[180px] xl:group-hover:top-129"
             />
           </div>
 

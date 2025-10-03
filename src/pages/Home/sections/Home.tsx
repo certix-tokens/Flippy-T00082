@@ -32,7 +32,7 @@ const container = {
 
 function Home() {
   return (
-    <div className="relative  h-auto md:h-[87vh] overflow-hidden">
+    <div className="relative z-0 h-auto md:h-[87vh] overflow-y-hidden">
       {/* Background Layer */}
       <motion.div
         className="absolute inset-0 scale-x-[-1] bg-cover              bg-[position:56%_center] 
@@ -79,7 +79,7 @@ function Home() {
           className="md:mt-[470px] mt-[604px] flex md:w-full w-[500px] justify-center px-2"
          
         >
-          <div className="rounded-2xl -mt-60 md:w-[1000px] w-[345px] h-auto bg-[#9318182B]/17 p-6 backdrop-blur-xs">
+          <div className="rounded-2xl xl:-mt-60 -mt-60 md:w-[1000px] w-[345px] h-auto bg-[#9318182B]/17 p-6 backdrop-blur-xs xl:h-50">
             <p className="hidden md:block font-jel mb-[20px] px-4 text-[11px] md:text-[20px] font-medium text-white">
               Welcome to Flippy!
             </p>
@@ -96,7 +96,7 @@ function Home() {
         </motion.div>
 
         {/* Buttons Section */}
-        <motion.div className="flex mt-6  gap-[89px] hidden  md:flex" >
+        <motion.div className="flex mt-6 xl:-mt-5 gap-[89px] hidden  md:flex" >
           <motion.button
             className="h-[66px] w-[173px] rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B]  via-[#9B282F]  to-[#B13940] text-white font-jel text-[24px]"
             whileHover={{ scale: 1.05, y: -2, boxShadow: '0px 10px 25px rgba(0,0,0,0.25)' }}
@@ -116,7 +116,7 @@ function Home() {
         </motion.div>
 
         {/* Social Icons */}
-        <motion.div className="grid grid-cols-4 gap-[36px]" variants={container}>
+        <motion.div className="grid grid-cols-4 gap-[36px] xl:-mt-5" variants={container}>
           {items.map((item, i) => (
             <motion.div key={i}  className="flex items-center justify-center">
               <motion.img
