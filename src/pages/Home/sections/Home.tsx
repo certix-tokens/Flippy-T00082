@@ -32,7 +32,7 @@ const container = {
 
 function Home() {
   return (
-    <div className="relative min-h-screen h-auto overflow-hidden">
+    <div className="relative  h-auto md:h-[87vh] overflow-hidden">
       {/* Background Layer */}
       <motion.div
         className="absolute inset-0 scale-x-[-1] bg-cover              bg-[position:56%_center] 
@@ -79,7 +79,7 @@ function Home() {
           className="md:mt-[470px] mt-[604px] flex md:w-full w-[500px] justify-center px-2"
          
         >
-          <div className="rounded-2xl md:w-[1000px] w-[345px] h-auto bg-[#9318182B]/17 p-6 backdrop-blur-xs">
+          <div className="rounded-2xl -mt-60 md:w-[1000px] w-[345px] h-auto bg-[#9318182B]/17 p-6 backdrop-blur-xs">
             <p className="hidden md:block font-jel mb-[20px] px-4 text-[11px] md:text-[20px] font-medium text-white">
               Welcome to Flippy!
             </p>

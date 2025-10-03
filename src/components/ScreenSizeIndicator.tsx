@@ -38,7 +38,7 @@ const ScreenSizeIndicator: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-4 right-4 bg-black text-white px-4 py-2 rounded-xl shadow-lg text-sm">
+    <div className="fixed  z-50 bottom-4 right-4 bg-black text-white px-4 py-2 rounded-xl shadow-lg text-sm">
       <p>
         Screen: {size.width} × {size.height}
       </p>

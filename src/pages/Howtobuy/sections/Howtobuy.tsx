@@ -1,11 +1,11 @@
 import Howtobuybg from '../../../assets/Images/howtobuy.png';
-import Howtobuypng from '../../../assets/Images/howtobuypng.png';
+import pengugif from '../../../assets/Images/P1-v2.gif';
 import { motion } from 'framer-motion';
 
 function HowToBuy() {
   return (
     <section
-      className="relative min-h-screen bg-cover bg-[position:70%_center] md:bg-center"
+      className="relative h-[86vh] overflow-hidden bg-cover bg-[position:70%_center] md:bg-center"
       style={{ backgroundImage: `url(${Howtobuybg})` }}
     >
       <div className="pt-[65px] text-center">
@@ -29,10 +29,10 @@ function HowToBuy() {
 
           <div>
             <motion.img
-              src={Howtobuypng}
+              src={pengugif}
               alt="How to buy illustration"
               loading="lazy"
-              className=" absolute top-70 md:top-60 2xl:group-hover:ml-40  sm:top-50 h-auto max-w-full group-hover:scale-90 2xl:top-50 xl:top-50 "
+              className=" absolute top-70 md:top-60 2xl:group-hover:ml-40  sm:top-50 h-auto max-w-full group-hover:scale-90 2xl:-mt-30 xl:top-50 w-[280px]"
               initial={{ x: '50vw', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{

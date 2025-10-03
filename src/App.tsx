@@ -11,23 +11,26 @@ import Join from './pages/Join/sections/join';
 function App() {
   return (
     <>
-  <Router>
-    <div>
-      <NavItem />
+      <Router>
+        <div>
+          <NavItem />
 
-      <Routes>
-       <Route path="/" element={<Home />} />
-       <Route path="/about_us" element={<Contact />} />
-       <Route path="/how-to-buy" element={<Htb />} />
-       <Route path="/road-map" element={<Roadmap />} />
-       <Route path="/toke" element={<Tokebg />} />
-       <Route path="/join" element={<Join />} />
-      </Routes>
-      <ScreenSizeIndicator />
-      
-      <Footer />
-    </div>
-  </Router>
+          <main className="pt-[72px] pb-[56px] min-h-[calc(100vh-128px)]">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about_us" element={<Contact />} />
+              <Route path="/how-to-buy" element={<Htb />} />
+              <Route path="/road-map" element={<Roadmap />} />
+              <Route path="/toke" element={<Tokebg />} />
+              <Route path="/join" element={<Join />} />
+            </Routes>
+          </main>
+
+          <ScreenSizeIndicator />
+
+          <Footer />
+        </div>
+      </Router>
     </>
   );
 }

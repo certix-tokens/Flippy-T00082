@@ -1,9 +1,9 @@
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { useState } from 'react';
 import Contactus from '../../../assets/Images/aboutus-bg.png';
-import Aboutus from '../../../assets/Images/aboutpenguine.png';
 import Pengleft from '../../../assets/Images/prngleft.png';
 import Pengright from '../../../assets/Images/pengright.png';
+import pengif from '../../../assets/Images/P1-v2.gif';
 
 function Contact() {
   const [isHovered, setIsHovered] = useState(false);
@@ -37,18 +37,15 @@ function Contact() {
   };
 
   return (
-    <div className="relative min-h-screen h-auto">
+    <div className="relative w-full  min-h-screen overflow-visible">
       <motion.div
-        className="absolute inset-0 bg-cover bg-[position:70%_center] md:bg-center"
+        className="h-auto absolute inset-0 bg-cover bg-[position:70%_center] md:bg-center"
         style={{ backgroundImage: `url(${Contactus})` }}
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.2, ease: 'easeOut' }}
       >
-        <div
-          className="flex min-h-screen h-full overflow-hidden flex-col items-center"
-          onMouseMove={handleMouseMove}
-        >
+        <div className="flex w-full flex-col items-center" onMouseMove={handleMouseMove}>
           <div className="mt-[184px] text-center md:mt-[50px] lg:mt-[100px] xl:mt-[50px]">
             {/* Animated Title */}
             <motion.h1
@@ -84,7 +81,7 @@ function Contact() {
 
             {/* Content Box with Stagger Animation */}
             <motion.div
-              className="mx-auto -mt-40 hidden overflow-hidden rounded-3xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] text-center md:mt-10 md:block md:w-[600px] lg:mt-5 lg:block lg:w-[800px] xl:mt-20 xl:block xl:w-[1000px] 2xl:-mt-20 2xl:block 2xl:w-[1500px]"
+              className="mx-auto -mt-40 hidden overflow-hidden rounded-3xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] text-center md:mt-10 md:block md:w-[600px] lg:mt-5 lg:block lg:w-[800px] xl:mt-10 xl:block xl:w-[1000px] 2xl:-mt-20 2xl:block 2xl:w-[1500px]"
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{
                 opacity: isHovered ? 1 : 0,
@@ -109,7 +106,7 @@ function Contact() {
                 animate={{ opacity: isHovered ? 1 : 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <p className="font-jel mx-auto px-20 py-20 text-left text-[20px] text-white md:text-[8px] lg:text-[8px] xl:text-[10px] 2xl:text-[20px]">
+                <p className="font-jel mx-auto px-20 py-20 h-auto text-left text-[20px] text-white md:text-[8px] lg:text-[8px] xl:text-[10px] 2xl:text-[20px]">
                   This is a short explanation. Flippy is a fun and interactive
                   platform. Keep it short, clear, and engaging to capture
                   attention. Flippy is a fun and interactive platform. Keep it
@@ -135,7 +132,7 @@ function Contact() {
             </motion.div>
           </div>
           <div className="group overflow-hidden">
-            <div className="mt-40 w-[400px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-8 py-18 text-center text-white md:hidden lg:hidden xl:hidden 2xl:hidden opacity-0 transition-opacity duration-300 group-active:opacity-100">
+            <div className="mt-10 w-[250px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-8 py-18 text-center text-white md:hidden lg:hidden xl:hidden 2xl:hidden opacity-0 transition-opacity duration-300 group-active:opacity-100">
               <p className="font-jel text-[10px]">
                 This is a short explanation. Flippy is a fun and interactive
                 platform. Keep it short, clear, and engaging to capture
@@ -146,9 +143,9 @@ function Contact() {
 
             <div className="flex justify-center">
               <motion.img
-                src={Aboutus}
+                src={pengif}
                 alt="Penguin mascot"
-                className="absolute bottom-35 h-auto w-[300px] cursor-pointer md:bottom-40 md:h-[448px] md:w-[448px] xl:bottom-0 xl:mb-40 xl:h-[300px] xl:w-[300px] 2xl:bottom-40 2xl:-mb-10 2xl:h-auto 2xl:w-[400px]"
+                className="absolute mt-10 h-auto w-[200px] cursor-pointer md:mt-20 md:h-auto md:w-[200px] lg:mt-20 xl:mt-0 2xl:-mt-20 xl:h-[300px] xl:w-[300px]  2xl:-mb-20 2xl:h-auto 2xl:w-[280px]"
                 initial={{ x: '-60vw', opacity: 0, rotate: -20 }}
                 animate={{
                   x: 0,
@@ -184,7 +181,7 @@ function Contact() {
               <motion.img
                 src={Pengleft}
                 alt="Left decoration"
-                className="absolute bottom-40 left-0 block md:hidden"
+                className="absolute mt-10  left-0 h-auto w-[100px] block md:hidden"
                 initial={{ x: -100, opacity: 0 }}
                 animate={{
                   x: 0,
@@ -204,7 +201,7 @@ function Contact() {
               <motion.img
                 src={Pengright}
                 alt="Right decoration"
-                className="absolute right-0 bottom-40 block md:hidden"
+                className="absolute right-0 mt-10 h-auto w-[100px] block md:hidden"
                 initial={{ x: 100, opacity: 0 }}
                 animate={{
                   x: 0,

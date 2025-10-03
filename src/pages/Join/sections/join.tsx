@@ -21,7 +21,7 @@ const items: Item[] = [
 
 function Join() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative h-[86vh] overflow-hidden">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"

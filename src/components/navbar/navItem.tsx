@@ -37,9 +37,9 @@ function NavItem() {
   }, [isOpen]);
 
   return (
-    <div className="relative h-auto w-full bg-[#4B181B] ">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-[#4B181B] h-[72px]">
       {/* Header */}
-      <div className="relative z-50 flex items-center justify-between px-6 py-8 md:justify-center">
+      <div className="relative z-50 flex items-center justify-between px-6 h-full md:justify-center">
         {/* Logo on LEFT */}
         <img src={Plogo} alt="Logo" className="ml-[15px] h-[37px] w-[30px] md:hidden" />
 
@@ -71,7 +71,7 @@ function NavItem() {
         aria-modal="true"
         className={`fixed top-0 right-0 h-full w-64 overflow-y-auto overscroll-contain transform rounded-l-[20px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
-        } z-50 flex flex-col gap-y-8 px-6 transition-transform duration-300 ease-in-out`}
+        } z-60 flex flex-col gap-y-8 px-6 transition-transform duration-300 ease-in-out`}
       >
         <div className="flex justify-end">
           <button className="mt-2 cursor-pointer text-2xl text-white" onClick={() => setIsOpen(false)}>

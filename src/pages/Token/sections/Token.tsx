@@ -4,7 +4,7 @@ import Toke2 from '../../../assets/Images/toke2.png';
 import Toke3 from '../../../assets/Images/toke3.png';
 function Token() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative h-[86vh] overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-[position:70%_center] md:bg-center"
         style={{ backgroundImage: `url(${Tokenbg})` }}
