@@ -7,9 +7,9 @@ import Pen5 from '../../../assets/Images/5.png';
 
 function Roadmap() {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative  min-h-screen overflow-hidden w-full">
       <div
-        className="absolute inset-0 bg-cover bg-[position:70%_center] md:bg-center"
+        className="fixed inset-0 bg-cover bg-[position:70%_center] md:bg-center"
         style={{ backgroundImage: `url(${Roadmapbg})` }}
       >
         <div className="mt-[155px] text-center">
@@ -19,18 +19,58 @@ function Roadmap() {
         </div>
 
         {/* Mobile pyramid layout (1-2-2) */}
-        <div className="mt-10 px-6 md:hidden">
-          <div className="flex justify-center">
-            <img src={Pen3} alt="Road map stage 3" className="h-auto w-28" />
+        <div className="mt-10 grid grid-cols-1 gap-10 px-4 pb-20  overflow-y-auto md:hidden">
+          <div className="flex space-x-5">
+            <img src={Pen3} alt="Road map stage 3" className="h-auto w-30" />
+            <div className="h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px]">
+              <p className="font-jel text-center text-[12px] text-white">S-1</p>
+              <p className="font-jel text-center text-[12px] text-white">
+                This is a short explanation. make it short and clear to keep
+                students attentive.
+              </p>
+            </div>
           </div>
-          <div className="mt-6 flex items-center justify-center gap-6">
-            <img src={Pen2} alt="Road map stage 2" className="h-auto w-24" />
-            <img src={Pen4} alt="Road map stage 4" className="h-auto w-24" />
+          <div className="flex space-x-5">
+            <img src={Pen3} alt="Road map stage 3" className="h-auto w-30" />
+            <div className="h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px]">
+              <p className="font-jel text-center text-[12px] text-white">S-1</p>
+              <p className="font-jel text-center text-[12px] text-white">
+                This is a short explanation. make it short and clear to keep
+                students attentive.
+              </p>
+            </div>
           </div>
-          <div className="mt-6 flex items-center justify-center gap-6">
-            <img src={Pen1} alt="Road map stage 1" className="h-auto w-20" />
-            <img src={Pen5} alt="Road map stage 5" className="h-auto w-20" />
+          <div className="flex space-x-5">
+            <img src={Pen3} alt="Road map stage 3" className="h-auto w-30" />
+            <div className="h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px]">
+              <p className="font-jel text-center text-[12px] text-white">S-1</p>
+              <p className="font-jel text-center text-[12px] text-white">
+                This is a short explanation. make it short and clear to keep
+                students attentive.
+              </p>
+            </div>
           </div>
+          <div className="flex space-x-5">
+            <img src={Pen3} alt="Road map stage 3" className="h-auto w-30" />
+            <div className="h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px]">
+              <p className="font-jel text-center text-[12px] text-white">S-1</p>
+              <p className="font-jel text-center text-[12px] text-white">
+                This is a short explanation. make it short and clear to keep
+                students attentive.
+              </p>
+            </div>
+          </div>
+          <div className="flex space-x-5">
+            <img src={Pen3} alt="Road map stage 3" className="h-auto w-30" />
+            <div className="h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px]">
+              <p className="font-jel text-center text-[12px] text-white">S-1</p>
+              <p className="font-jel text-center text-[12px] text-white">
+                This is a short explanation. make it short and clear to keep
+                students attentive.
+              </p>
+            </div>
+          </div>
+          
         </div>
 
         {/* Desktop layout (unchanged) */}
@@ -50,7 +90,7 @@ function Roadmap() {
             <img
               src={Pen1}
               alt=""
-              className="absolute mt-30 group-hover:-mb-8 group-hover:h-auto group-hover:w-[180px] md:bottom-45 md:h-auto md:w-30 md:group-hover:-mr-40 md:group-hover:-mb-20 md:group-hover:w-30 xl:h-auto xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-130 2xl:w-[222px] 2xl:group-hover:top-150 2xl:group-hover:w-[180px]"
+              className="absolute mt-30 group-hover:-mb-8 group-hover:h-auto group-hover:w-[180px] md:top-100 md:h-auto md:w-30 md:group-hover:-mr-40 md:group-hover:-mb-20 md:group-hover:w-30 xl:h-auto xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-100 2xl:w-[222px] 2xl:group-hover:top-120 2xl:group-hover:w-[180px]"
             />
           </div>
 
@@ -69,7 +109,7 @@ function Roadmap() {
             <img
               src={Pen2}
               alt=""
-              className="absolute mt-[230px] ml-10 group-hover:mb-[-70px] group-hover:h-auto group-hover:w-[180px] md:bottom-65 md:mr-30 md:h-auto md:w-30 md:group-hover:top-150 md:group-hover:w-30 xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-105 2xl:w-[222px] 2xl:group-hover:top-135 2xl:group-hover:w-[180px] xl:group-hover:top-129"
+              className="absolute mt-[230px] ml-10 group-hover:mb-[-70px] group-hover:h-auto group-hover:w-[180px] md:mt-55 md:mr-30 md:h-auto md:w-30 md:group-hover:top-150 md:group-hover:w-30 xl:w-[180px] xl:group-hover:top-129 xl:group-hover:w-[180px] 2xl:top-50 2xl:w-[222px] 2xl:group-hover:top-75 2xl:group-hover:w-[180px]"
             />
           </div>
 
@@ -88,7 +128,7 @@ function Roadmap() {
             <img
               src={Pen3}
               alt=""
-              className="bottom-[200px absolute group-hover:mb-[-50px] group-hover:h-auto group-hover:w-[180px] md:top-135 md:mr-5 md:h-auto md:w-30 md:group-hover:top-150 md:group-hover:w-30 xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-110 xl:top-115 2xl:w-[222px] 2xl:group-hover:top-140 2xl:group-hover:w-[180px] xl:group-hover:top-135"
+              className="bottom-[200px absolute group-hover:mb-[-50px] group-hover:h-auto group-hover:w-[180px] md:top-120 md:mr-5 md:h-auto md:w-30 md:group-hover:top-150 md:group-hover:w-30 xl:top-115 xl:w-[180px] xl:group-hover:top-135 xl:group-hover:w-[180px] 2xl:top-110 2xl:w-[222px] 2xl:group-hover:top-140 2xl:group-hover:w-[180px]"
             />
           </div>
 
@@ -107,7 +147,7 @@ function Roadmap() {
             <img
               src={Pen4}
               alt=""
-              className="absolute bottom-[200px] group-hover:mb-[-50px] group-hover:h-auto group-hover:w-[180px] md:top-140 md:ml-30 md:h-auto md:w-30 md:group-hover:top-155 md:group-hover:w-30 xl:w-[180px] xl:group-hover:w-[180px] 2xl:top-118 xl:top-125 2xl:w-[222px] 2xl:group-hover:top-145 2xl:group-hover:w-[180px] xl:group-hover:top-140"
+              className="absolute bottom-[200px] group-hover:mb-[-50px] group-hover:h-auto group-hover:w-[180px] md:top-125 md:ml-30 md:h-auto md:w-30 md:group-hover:top-155 md:group-hover:w-30 xl:top-125 xl:w-[180px] xl:group-hover:top-140 xl:group-hover:w-[180px] 2xl:top-118 2xl:w-[222px] 2xl:group-hover:top-145 2xl:group-hover:w-[180px]"
             />
           </div>
 
