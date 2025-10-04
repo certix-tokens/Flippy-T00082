@@ -96,7 +96,7 @@ function Home() {
         </motion.div>
 
         {/* Buttons Section */}
-        <motion.div className="flex mt-6 xl:-mt-5 gap-[89px] hidden  md:flex" >
+  <motion.div className="mt-6 xl:-mt-5 gap-[89px] hidden md:flex" >
           <motion.button
             className="h-[66px] w-[173px] rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B]  via-[#9B282F]  to-[#B13940] text-white font-jel text-[24px]"
             whileHover={{ scale: 1.05, y: -2, boxShadow: '0px 10px 25px rgba(0,0,0,0.25)' }}

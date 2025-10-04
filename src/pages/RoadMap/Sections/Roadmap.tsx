@@ -1,4 +1,5 @@
 import Roadmapbg from '../../../assets/Images/roadmapbg.png';
+import { useState } from 'react';
 import Pen1 from '../../../assets/Images/1.png';
 import Pen2 from '../../../assets/Images/2.png';
 import Pen3 from '../../../assets/Images/3.png';
@@ -6,6 +7,12 @@ import Pen4 from '../../../assets/Images/4.png';
 import Pen5 from '../../../assets/Images/5.png';
 
 function Roadmap() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const toggleOpacity = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
     <div className="relative  min-h-screen overflow-hidden w-full">
       <div
@@ -19,65 +26,79 @@ function Roadmap() {
         </div>
 
         {/* Mobile pyramid layout (1-2-2) */}
-        <div className="mt-10 grid grid-cols-1 gap-10 px-4 pb-20  overflow-y-auto md:hidden">
-          <div className="flex space-x-5">
-            <img src={Pen3} alt="Road map stage 3" className="h-auto w-30" />
-            <div className="h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px]">
+
+        <div className="mt-10 grid grid-cols-1 gap-10 px-4 sm:pl-30 pb-20  overflow-y-auto md:hidden">
+          <div 
+            className="flex space-x-5 sm:space-x-30 group cursor-pointer" 
+            onClick={() => toggleOpacity(0)}
+          >
+            <img src={Pen1} alt="Road map stage 1" className="h-auto w-30" />
+            <div className={`transition-opacity duration-300 h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] ${activeIndex === 0 ? 'opacity-100' : 'opacity-0'}`}>
               <p className="font-jel text-center text-[12px] text-white">S-1</p>
               <p className="font-jel text-center text-[12px] text-white">
-                This is a short explanation. make it short and clear to keep
-                students attentive.
+          This is a short explanation. make it short and clear to keep students attentive.
               </p>
             </div>
           </div>
-          <div className="flex space-x-5">
-            <img src={Pen3} alt="Road map stage 3" className="h-auto w-30" />
-            <div className="h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px]">
-              <p className="font-jel text-center text-[12px] text-white">S-1</p>
+
+          <div 
+            className="flex space-x-5 sm:space-x-30 group cursor-pointer" 
+            onClick={() => toggleOpacity(1)}
+          >
+            <img src={Pen2} alt="Road map stage 2" className="h-auto w-30" />
+            <div className={`transition-opacity duration-300 h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] ${activeIndex === 1 ? 'opacity-100' : 'opacity-0'}`}>
+              <p className="font-jel text-center text-[12px] text-white">S-2</p>
               <p className="font-jel text-center text-[12px] text-white">
-                This is a short explanation. make it short and clear to keep
-                students attentive.
+          This is a short explanation. make it short and clear to keep students attentive.
               </p>
             </div>
           </div>
-          <div className="flex space-x-5">
+
+          <div 
+            className="flex space-x-5 sm:space-x-30 group cursor-pointer" 
+            onClick={() => toggleOpacity(2)}
+          >
             <img src={Pen3} alt="Road map stage 3" className="h-auto w-30" />
-            <div className="h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px]">
-              <p className="font-jel text-center text-[12px] text-white">S-1</p>
+            <div className={`transition-opacity duration-300 h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] ${activeIndex === 2 ? 'opacity-100' : 'opacity-0'}`}>
+              <p className="font-jel text-center text-[12px] text-white">S-3</p>
               <p className="font-jel text-center text-[12px] text-white">
-                This is a short explanation. make it short and clear to keep
-                students attentive.
+          This is a short explanation. make it short and clear to keep students attentive.
               </p>
             </div>
           </div>
-          <div className="flex space-x-5">
-            <img src={Pen3} alt="Road map stage 3" className="h-auto w-30" />
-            <div className="h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px]">
-              <p className="font-jel text-center text-[12px] text-white">S-1</p>
+
+          <div 
+            className="flex space-x-5 sm:space-x-30 group cursor-pointer" 
+            onClick={() => toggleOpacity(3)}
+          >
+            <img src={Pen4} alt="Road map stage 4" className="h-auto w-30" />
+            <div className={`transition-opacity duration-300 h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] ${activeIndex === 3 ? 'opacity-100' : 'opacity-0'}`}>
+              <p className="font-jel text-center text-[12px] text-white">S-4</p>
               <p className="font-jel text-center text-[12px] text-white">
-                This is a short explanation. make it short and clear to keep
-                students attentive.
+          This is a short explanation. make it short and clear to keep students attentive.
               </p>
             </div>
           </div>
-          <div className="flex space-x-5">
-            <img src={Pen3} alt="Road map stage 3" className="h-auto w-30" />
-            <div className="h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px]">
-              <p className="font-jel text-center text-[12px] text-white">S-1</p>
+
+          <div 
+            className="flex space-x-5 sm:space-x-30 group cursor-pointer" 
+            onClick={() => toggleOpacity(4)}
+          >
+            <img src={Pen5} alt="Road map stage 5" className="h-auto w-30" />
+            <div className={`transition-opacity duration-300 h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] ${activeIndex === 4 ? 'opacity-100' : 'opacity-0'}`}>
+              <p className="font-jel text-center text-[12px] text-white">S-5</p>
               <p className="font-jel text-center text-[12px] text-white">
-                This is a short explanation. make it short and clear to keep
-                students attentive.
+          This is a short explanation. make it short and clear to keep students attentive.
               </p>
             </div>
           </div>
-          
         </div>
 
         {/* Desktop layout (unchanged) */}
         <div className="hidden grid-cols-5 px-30 md:grid">
           {/* image 1 */}
 
-          <div className="group -ml-40 flex flex-row justify-center">
+          <div className="group -ml-40  flex flex-row justify-center">
             <div className="mt-50 h-40 w-[260px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-8 text-left text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:mt-75 md:ml-30 md:w-[200px] md:px-6 lg:mt-80 lg:ml-10 lg:w-[200px] lg:text-[15px] xl:mt-40 xl:ml-30 xl:h-50 2xl:mt-40 2xl:h-50">
               <p className="font-jel text-center md:text-[10px] lg:text-[12px] xl:text-[16px]">
                 S-1
@@ -128,7 +149,7 @@ function Roadmap() {
             <img
               src={Pen3}
               alt=""
-              className="bottom-[200px absolute group-hover:mb-[-50px] group-hover:h-auto group-hover:w-[180px] md:top-120 md:mr-5 md:h-auto md:w-30 md:group-hover:top-150 md:group-hover:w-30 xl:top-115 xl:w-[180px] xl:group-hover:top-135 xl:group-hover:w-[180px] 2xl:top-110 2xl:w-[222px] 2xl:group-hover:top-140 2xl:group-hover:w-[180px]"
+              className="absolute bottom-[200px] group-hover:mb-[-50px] group-hover:h-auto group-hover:w-[180px] md:top-120 md:mr-5 md:h-auto md:w-30 md:group-hover:top-150 md:group-hover:w-30 xl:top-115 xl:w-[180px] xl:group-hover:top-135 xl:group-hover:w-[180px] 2xl:top-110 2xl:w-[222px] 2xl:group-hover:top-140 2xl:group-hover:w-[180px]"
             />
           </div>
 
