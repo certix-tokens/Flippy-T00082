@@ -5,6 +5,7 @@ import Pengleft from '../../../assets/Images/prngleft.png';
 import Pengright from '../../../assets/Images/pengright.png';
 import pengif from '../../../assets/Images/P1-v2.gif';
 
+
 function Contact() {
   const [isHovered, setIsHovered] = useState(false);
   const [isPenguinHovered, setIsPenguinHovered] = useState(false);
@@ -36,17 +37,29 @@ function Contact() {
     mouseY.set(e.clientY - centerY);
   };
 
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const toggleOpacity = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+
+
+
+
+
+
   return (
     <div className="relative z-0  h-[87vh] overflow-y-hidden">
       <motion.div
-        className="h-auto absolute inset-0 bg-cover bg-[position:70%_center] md:bg-center"
+        className="absolute inset-0  bg-cover bg-[position:70%_center] md:bg-center"
         style={{ backgroundImage: `url(${Contactus})` }}
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.2, ease: 'easeOut' }}
       >
-        <div className="flex w-full flex-col items-center" onMouseMove={handleMouseMove}>
-          <div className="mt-[184px] text-center md:mt-[50px] lg:mt-[100px] xl:mt-[50px]">
+  <div className="relative h-full w-full flex flex-col items-center" onMouseMove={handleMouseMove}>
+          <div className="mt-[100px] text-center md:mt-[50px] lg:mt-[100px] xl:mt-[50px]">
             {/* Animated Title */}
             <motion.h1
               className="font-jacks 2xl:[150px] text-5xl font-normal text-white md:text-7xl xl:text-8xl"
@@ -131,9 +144,9 @@ function Contact() {
               </motion.div>
             </motion.div>
           </div>
-          <div className="group overflow-hidden">
-            <div className="mt-10 w-[250px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-8 py-18 text-center text-white md:hidden lg:hidden xl:hidden 2xl:hidden opacity-0 transition-opacity duration-300 group-active:opacity-100">
-              <p className="font-jel text-[10px]">
+          <div className=" flex justify-center  overflow-hidden" onClick={() => toggleOpacity(0)}>
+            <div className={`top-[32%]  absolute w-[150px] h-auto rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-3 text-center text-white md:hidden lg:hidden xl:hidden 2xl:hidden transition-opacity duration-300 ${activeIndex === 0 ? 'opacity-100' : 'opacity-0'}`}>
+              <p className="font-jel text-[8px]">
                 This is a short explanation. Flippy is a fun and interactive
                 platform. Keep it short, clear, and engaging to capture
                 attention. Flippy is a fun and interactive platform. Keep it
@@ -141,11 +154,11 @@ function Contact() {
               </p>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex  justify-center">
               <motion.img
                 src={pengif}
                 alt="Penguin mascot"
-                className="absolute mt-5 h-auto w-[200px] cursor-pointer md:mt-20 md:h-auto md:w-[200px] lg:mt-20 xl:mt-0 2xl:-mt-20 xl:h-[300px] xl:w-[300px]  2xl:-mb-20 2xl:h-auto 2xl:w-[280px]"
+                className="absolute left-1/2 -translate-x-1/2 top-[48%] sm:top-[60%] h-auto w-[200px] cursor-pointer md:top-[50%] md:w-[200px] lg:top-[48%] xl:top-[50%] xl:w-[200px]  2xl:top-[50%] 2xl:w-[280px]"
                 initial={{ x: '-60vw', opacity: 0, rotate: -20 }}
                 animate={{
                   x: 0,
@@ -181,7 +194,7 @@ function Contact() {
               <motion.img
                 src={Pengleft}
                 alt="Left decoration"
-                className="absolute  sm:-mt-5 mt-10  left-0 h-auto w-[100px] block md:hidden"
+                className="absolute left-0 top-[53%] sm:top-[60%] h-auto w-[100px] block md:hidden"
                 initial={{ x: -100, opacity: 0 }}
                 animate={{
                   x: 0,
@@ -201,7 +214,7 @@ function Contact() {
               <motion.img
                 src={Pengright}
                 alt="Right decoration"
-                className="absolute sm:-mt-5 right-0 mt-10 h-auto w-[100px] block md:hidden"
+                className="absolute right-0 top-[55%] sm:top-[60%] h-auto w-[100px] block md:hidden"
                 initial={{ x: 100, opacity: 0 }}
                 animate={{
                   x: 0,
