@@ -44,7 +44,7 @@ function NavItem() {
         <img src={Plogo} alt="Logo" className="ml-[15px] h-[37px] w-[30px] md:hidden" />
 
         {/* Desktop Menu */}
-        <nav className="font-jel hidden gap-[69px] text-[16px] font-normal text-white md:flex">
+        <nav className="font-jel hidden gap-[69px] text-[12px] xl:text-[16px] font-normal text-white md:flex">
           {items.map((item) => (
             <a key={item.name} href={item.path}>
               {item.name}
