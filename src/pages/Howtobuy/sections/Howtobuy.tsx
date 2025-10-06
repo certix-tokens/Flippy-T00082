@@ -22,7 +22,7 @@ function HowToBuy() {
       <div className="mt-8 flex items-center justify-center md:mt-16" onClick={() => toggleOpacity(0)}>
         <div className="grid-col-2 md:grid-row-1 group grid">
           <div className="flex justify-center">
-            <div className={`absolute top-[25%] xl:left-100 2xl:left-160 2xl:top-[35%] xl:top-[30%] h-50 w-[260px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-10 py-8 text-left text-white sm:mt-2 md:mt-10 xl:mt-2 2xl:-ml-40 2xl:h-60 2xl:w-[460px] 2xl:px-12 ${activeIndex === 0 ? 'opacity-100' : 'opacity-0'}  `}>
+            <div className={`absolute top-[25%] xl:left-100 2xl:left-160 2xl:top-[35%] xl:top-[30%] h-50 w-[260px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-10 py-8 text-left text-white sm:mt-2 md:mt-10 xl:mt-2 2xl:-ml-40 2xl:h-60 2xl:w-[460px] xl:opacity-0 xl:group-hover:opacity-100 2xl:px-12 ${activeIndex === 0 ? 'opacity-100' : 'opacity-0'}  `}>
               <ol className="font-jel list-disc space-y-4 2xl:text-[20px]">
                 <li>Make Wallet</li>
                 <li>Get some eth</li>
