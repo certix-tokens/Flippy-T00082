@@ -2,6 +2,14 @@ import Tokenbg from '../../../assets/Images/tokenomicsbg.png';
 import Toke1 from '../../../assets/Images/toke1.png';
 import Toke2 from '../../../assets/Images/toke2.png';
 import Toke3 from '../../../assets/Images/toke3.png';
+import gif1 from '../../../assets/Images/gif/2gif.gif';
+import gif2 from '../../../assets/Images/gif/5gif.gif';
+import gif3 from '../../../assets/Images/gif/4gif.gif';
+import { motion,  Variants  } from 'framer-motion';
+
+
+
+
 import { useState } from 'react';
 function Token() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -9,16 +17,37 @@ function Token() {
   const toggleOpacity = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+
+
+  const titleVariant: Variants = {
+    hidden: { opacity: 0, y: 80 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.6, duration: 2, type: 'spring', stiffness: 100 },
+    },
+  };
+
+
+
+
   return (
     <div className="relative h-[87vh] overflow-y-hidden">
-      <div
+      <motion.div
         className="absolute inset-0 bg-cover bg-[position:70%_center] md:bg-center"
         style={{ backgroundImage: `url(${Tokenbg})` }}
+        initial={{ scale: 1.1, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.2, ease: 'easeOut' }}
       >
         <div className="mt-[100px] text-center">
-          <h1 className="font-jack text-[40px font-normal text-white md:text-[100px] xl:text-[150px]">
+          <motion.h1 className="font-jack text-[40px font-normal text-white md:text-[100px] xl:text-[150px]"
+           variants={titleVariant}
+              initial="hidden"
+              animate="show"
+          >
             TOKENOMICS
-          </h1>
+          </motion.h1>
         </div>
 
         <div className="mx-auto grid w-full max-w-6xl grid-cols-3 place-items-center justify-center gap-6 py-8 sm:grid-cols-3 lg:grid-cols-3">
@@ -30,10 +59,17 @@ function Token() {
               <p className="font-jel">Buy Tax</p>
             </div>
             <div className="flex">
-              <img
+              <motion.img
                 src={Toke1}
                 alt="Token 1"
                 className="absolute h-auto w-[150px]  left-2 top-[60%] sm:w-[200px] sm:top-[55%] sm:left-10 md:left-10 md:top-[49%] md:w-[250px] lg:top-[48%] lg:left-35 md:group-hover:top-[52%] lg:group-hover:top-[50%] xl:top-[45%] xl:w-[300px] xl:group-hover:top-[50%] 2xl:top-[35%] 2xl:left-60 2xl:w-[447px]"
+                                   initial={{ x: '-100vw', opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{
+                type: 'tween',
+                ease: [0.22, 1, 0.36, 1],
+                duration: 1.2,
+              }}
               />
             </div>
           </div>
@@ -46,10 +82,17 @@ function Token() {
               <p className="font-jel">Sell Tax</p>
             </div>
             <div className="flex justify-center">
-              <img
+              <motion.img
                 src={Toke2}
                 alt="Token 2"
                 className="absolute h-auto w-[150px] top-[65%] sm:w-[200px] sm:top-[58%] md:w-[250px] md:top-[53%] md:group-hover:top-[55%] lg:top-[52%] lg:group-hover:top-[55%] xl:top-[48%] xl:w-[300px] xl:group-hover:top-[50%] 2xl:top-[40%] 2xl:w-[447px] 2xl:group-hover:top-[45%]"
+                                   initial={{ y: '100vw', opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'tween',
+                ease: [0.22, 1, 0.36, 1],
+                duration: 1.2,
+              }}
               />
             </div>
           </div>
@@ -62,15 +105,22 @@ function Token() {
             </div>
 
             <div className="flex">
-              <img
+              <motion.img
                 src={Toke3}
                 alt="Token 3"
                 className="absolute right-2 h-auto top-[60%] w-[150px] sm:top-[55%] sm:right-10 sm:w-[200px] md:right-15 md:top-[50%] lg:top-[48%] lg:group-hover:top-[52%] lg:right-35 md:w-[250px] xl:top-[45%] xl:w-[300px] xl:group-hover:top-[50%] 2xl:top-[35%] 2xl:w-[447px] 2xl:group-hover:top-[45%]"
+                                   initial={{ x: '100vw', opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{
+                type: 'tween',
+                ease: [0.22, 1, 0.36, 1],
+                duration: 1.2,
+              }}
               />
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

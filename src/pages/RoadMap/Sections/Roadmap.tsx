@@ -5,7 +5,8 @@ import gif2 from '../../../assets/Images/gif/1gif.gif';
 import gif3 from '../../../assets/Images/gif/5gif.gif';
 import gif4 from '../../../assets/Images/gif/3gif.gif';
 import gif5 from '../../../assets/Images/gif/4gif.gif';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform, useSpring ,  Variants  } from 'framer-motion';
+
 function Roadmap() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -13,20 +14,32 @@ function Roadmap() {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+    const titleVariant: Variants = {
+    hidden: { opacity: 0, y: 80 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.6, duration: 2, type: 'spring', stiffness: 100 },
+    },
+  };
+
   return (
     <div className="relative min-h-screen w-full overflow-visible">
       <motion.div
         className="relative w-full min-h-screen inset-0 bg-cover bg-[position:60%_center] sm:bg-[position:60%_center] md:bg-center"
         style={{ backgroundImage: `url(${Roadmapbg})` }}
-         initial={{ scale: 0.95, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 1, ease: 'easeOut' }}
-        
+        initial={{ scale: 1.1, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.2, ease: 'easeOut' }}
       >
         <div className="pt-[100px] text-center">
-          <h1 className="font-jack text-5xl font-normal text-white md:text-7xl xl:text-8xl">
+          <motion.h1 className="font-jack text-5xl font-normal text-white md:text-7xl xl:text-8xl"
+          variants={titleVariant}
+              initial="hidden"
+              animate="show"
+          >
             ROAD MAP
-          </h1>
+          </motion.h1>
         </div>
 
         {/* Mobile pyramid layout (1-2-2) */}
@@ -128,10 +141,18 @@ function Roadmap() {
               </p>
             </div>
             <div className="flex">
-              <img
+              <motion.img
                 src={gif1}
                 alt=""
                 className="absolute h-auto sm:top-[68%] sm:left-10 sm:w-[100px]  md:top-[62%] md:left-5 md:w-[150px] md:group-hover:top-[65%] lg:top-[59%] lg:w-[170px] lg:group-hover:top-[62%] xl:top-[53%] xl:left-5 xl:w-[222px] xl:group-hover:top-[55%] 2xl:top-[57%] 2xl:left-30 2xl:group-hover:top-[62%] 2xl:group-hover:w-[200px]"
+
+                             initial={{ x: '-100vw', opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{
+                type: 'tween',
+                ease: [0.22, 1, 0.36, 1],
+                duration: 1.2,
+              }}
               />
             </div>
           </div>
@@ -149,10 +170,12 @@ function Roadmap() {
               </p>
             </div>
             <div className='flex'>
-                   <img
+                   <motion.img
               src={gif2}
               alt=""
               className="group-hover:transition-300 sm:left-30 sm:top-[58%] absolute h-auto sm:w-[100px] md:top-[54%] md:left-40 md:w-[150px] md:group-hover:top-[62%] lg:top-[51%] lg:w-[170px] lg:group-hover:top-[57%] xl:top-[45%] xl:left-70 xl:w-[222px] xl:group-hover:top-[50%] 2xl:top-[47%] 2xl:left-120 2xl:group-hover:top-[56%] 2xl:group-hover:w-[200px]"
+
+              
             />
             </div>
        
@@ -211,10 +234,18 @@ function Roadmap() {
                 students
               </p>
             </div>
-            <img
+            <motion.img
               src={gif5}
               alt=""
               className="absolute sm:right-10 sm:top-[68%] h-auto sm:w-[100px] md:top-[65%] md:right-5 md:w-[150px] md:group-hover:top-[70%] lg:top-[62%] lg:w-[170px] lg:group-hover:top-[65%] xl:top-[59%] xl:right-5 xl:w-[222px] 2xl:top-[62%] 2xl:right-30 2xl:group-hover:top-[65%]"
+
+                             initial={{ x: '100vw', opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{
+                type: 'tween',
+                ease: [0.22, 1, 0.36, 1],
+                duration: 1.2,
+              }}
             />
           </div>
         </div>

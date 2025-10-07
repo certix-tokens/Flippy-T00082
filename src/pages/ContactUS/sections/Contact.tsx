@@ -1,16 +1,16 @@
-import { motion, useMotionValue, useTransform, useSpring, Variants } from 'framer-motion';
+import { motion, useMotionValue, useTransform, useSpring ,  Variants  } from 'framer-motion';
 import { useState } from 'react';
 import Contactus from '../../../assets/Images/aboutus-bg.png';
 import Pengleft from '../../../assets/Images/prngleft.png';
 import Pengright from '../../../assets/Images/pengright.png';
 import pengif from '../../../assets/Images/P1-v2.gif';
 
+
 function Contact() {
   const [isHovered, setIsHovered] = useState(false);
   const [isPenguinHovered, setIsPenguinHovered] = useState(false);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  // 3D Motion for penguin
+  // Mouse tracking for penguin
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -21,7 +21,6 @@ function Contact() {
       damping: 20,
     }
   );
-
   const penguinRotateY = useSpring(
     useTransform(mouseX, [-300, 300], [-15, 15]),
     {
@@ -38,18 +37,10 @@ function Contact() {
     mouseY.set(e.clientY - centerY);
   };
 
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   const toggleOpacity = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
-  };
-
-  // ✨ Stage entrance animation variants ✨
-  const bgVariant: Variants = {
-    hidden: { opacity: 0, scale: 1.1 },
-    show: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 1.2, ease: 'easeOut' },
-    },
   };
 
   const titleVariant: Variants = {
@@ -57,64 +48,59 @@ function Contact() {
     show: {
       opacity: 1,
       y: 0,
-      transition: { delay: 0.8, duration: 0.8, type: 'spring', stiffness: 100 },
+      transition: { delay: 0.6, duration: 2, type: 'spring', stiffness: 100 },
     },
   };
 
-  const penguinMainVariant: Variants = {
-    hidden: { opacity: 0, y: 300, scale: 0.8 },
-    show: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { delay: 1.3, type: 'spring', stiffness: 100, damping: 15 },
-    },
-  };
-
-  const penguinLeftVariant: Variants = {
+    const penguinLeftVariant: Variants = {
     hidden: { opacity: 0, x: -250, y: 150, rotate: -15 },
     show: {
       opacity: 1,
       x: 0,
       y: 0,
       rotate: 0,
-      transition: { delay: 1.8, type: 'spring', stiffness: 100, damping: 15 },
+      transition: { delay: 1, type: 'spring', stiffness: 100, damping: 15 },
     },
   };
 
-  const penguinRightVariant: Variants = {
+    const penguinRightVariant: Variants = {
     hidden: { opacity: 0, x: 250, y: 150, rotate: 15 },
     show: {
       opacity: 1,
       x: 0,
       y: 0,
       rotate: 0,
-      transition: { delay: 2.1, type: 'spring', stiffness: 100, damping: 15 },
+      transition: { delay: 1, type: 'spring', stiffness: 100, damping: 15 },
     },
   };
 
+
+
+
+
   return (
-    <div className="relative z-0 h-[86.5vh] overflow-y-hidden">
+    <div className="relative z-0  h-[87vh] overflow-y-hidden">
       <motion.div
-        className="absolute inset-0 bg-cover bg-[position:70%_center] md:bg-center"
+        className="absolute inset-0  bg-cover bg-[position:70%_center] md:bg-center"
         style={{ backgroundImage: `url(${Contactus})` }}
-       initial={{ scale: 1.1, opacity: 0 }}
+            initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.2, ease: 'easeOut' }}
       >
-        <div
-          className="relative flex h-full w-full flex-col items-center"
-          onMouseMove={handleMouseMove}
-        >
+  <div className="relative h-full w-full flex flex-col items-center" onMouseMove={handleMouseMove}>
           <div className="group mt-[100px] text-center md:mt-[50px] lg:mt-[100px] xl:mt-[50px]">
             {/* Animated Title */}
             <motion.h1
-              className="font-jacks 2xl:[150px] text-5xl font-normal text-white opacity-100 group-hover:opacity-0 md:text-7xl xl:text-8xl"
-              variants={titleVariant}
+            
+              className="font-jacks 2xl:[150px] text-5xl font-normal text-white md:text-7xl xl:text-8xl opacity-100 group-hover:opacity-0"
+    variants={titleVariant}
               initial="hidden"
               animate="show"
+              
+              
+          
             >
-              About us
+             About us
             </motion.h1>
 
             {/* Content Box with Stagger Animation */}
@@ -144,7 +130,7 @@ function Contact() {
                 animate={{ opacity: isHovered ? 1 : 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <p className="font-jel mx-auto h-auto px-20 py-20 text-left text-[20px] text-white md:text-[8px] lg:text-[8px] xl:text-[10px] 2xl:text-[20px]">
+                <p className="font-jel mx-auto px-20 py-20 h-auto text-left text-[20px] text-white md:text-[8px] lg:text-[8px] xl:text-[10px] 2xl:text-[20px]">
                   This is a short explanation. Flippy is a fun and interactive
                   platform. Keep it short, clear, and engaging to capture
                   attention. Flippy is a fun and interactive platform. Keep it
@@ -169,17 +155,8 @@ function Contact() {
               </motion.div>
             </motion.div>
           </div>
-
-          {/* Penguins Section */}
-          <div
-            className="flex justify-center overflow-hidden"
-            onClick={() => toggleOpacity(0)}
-          >
-            <div
-              className={`absolute top-[32%] h-auto w-[150px] rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-3 text-center text-white transition-opacity duration-300 md:hidden lg:hidden xl:hidden 2xl:hidden ${
-                activeIndex === 0 ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
+          <div className=" flex justify-center  overflow-hidden" onClick={() => toggleOpacity(0)}>
+            <div className={`top-[32%]  absolute w-[150px] h-auto rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-3 text-center text-white md:hidden lg:hidden xl:hidden 2xl:hidden transition-opacity duration-300 ${activeIndex === 0 ? 'opacity-100' : 'opacity-0'}`}>
               <p className="font-jel text-[8px]">
                 This is a short explanation. Flippy is a fun and interactive
                 platform. Keep it short, clear, and engaging to capture
@@ -188,15 +165,18 @@ function Contact() {
               </p>
             </div>
 
-            <div className="flex justify-center">
-              {/* Center Penguin */}
+            <div className="flex  justify-center">
               <motion.img
                 src={pengif}
                 alt="Penguin mascot"
-                className="absolute top-[48%] left-1/2 h-auto w-[200px] -translate-x-1/2 cursor-pointer sm:top-[60%] md:top-[50%] md:w-[200px] lg:top-[48%] xl:top-[50%] xl:w-[200px] 2xl:top-[50%] 2xl:w-[280px]"
-                variants={penguinMainVariant}
-                initial="hidden"
-                animate="show"
+                className="absolute left-1/2 -translate-x-1/2 top-[48%] sm:top-[60%] h-auto w-[200px] cursor-pointer md:top-[50%] md:w-[200px] lg:top-[48%] xl:top-[50%] xl:w-[200px]  2xl:top-[50%] 2xl:w-[280px]"
+                initial={{ x: '-60vw', opacity: 0, rotate: -20 }}
+                animate={{
+                  x: 0,
+                  opacity: 1,
+                  rotate: 0,
+                  scale: isPenguinHovered ? 1.15 : isHovered ? 1.1 : 1,
+                }}
                 transition={{
                   type: 'spring',
                   stiffness: 90,
@@ -215,17 +195,17 @@ function Contact() {
                 whileTap={{
                   scale: 0.95,
                   rotate: [0, -10, 10, -10, 0],
-                  transition: { duration: 0.5 },
+                  transition: { duration: 1 },
                 }}
                 onHoverStart={() => setIsPenguinHovered(true)}
                 onHoverEnd={() => setIsPenguinHovered(false)}
               />
 
-              {/* Left Penguin */}
+              {/* Floating Animation for Side Penguins */}
               <motion.img
                 src={Pengleft}
                 alt="Left decoration"
-                className="absolute top-[53%] left-0 block h-auto w-[100px] sm:top-[60%] md:hidden"
+                className="absolute left-0 top-[53%] sm:top-[60%] h-auto w-[100px] block md:hidden"
                 variants={penguinLeftVariant}
                 initial="hidden"
                 animate="show"
@@ -234,13 +214,11 @@ function Contact() {
                   opacity: { duration: 0.5 },
                 }}
               />
-
-              {/* Right Penguin */}
               <motion.img
                 src={Pengright}
                 alt="Right decoration"
-                className="absolute top-[55%] right-0 block h-auto w-[100px] sm:top-[60%] md:hidden"
-                variants={penguinRightVariant}
+                className="absolute right-0 top-[55%] sm:top-[60%] h-auto w-[100px] block md:hidden"
+                    variants={penguinRightVariant}
                 initial="hidden"
                 animate="show"
                 transition={{
@@ -251,30 +229,35 @@ function Contact() {
             </div>
           </div>
 
+          {/* Interactive Penguin */}
+
           {/* Floating Particles Effect */}
-          {isPenguinHovered &&
-            [...Array(8)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute h-2 w-2 rounded-full bg-white"
-                style={{
-                  left: '50%',
-                  bottom: '35%',
-                }}
-                initial={{ scale: 0, x: 0, y: 0, opacity: 1 }}
-                animate={{
-                  scale: [0, 1, 0],
-                  x: Math.cos((i * Math.PI * 2) / 8) * 100,
-                  y: Math.sin((i * Math.PI * 2) / 8) * 100,
-                  opacity: [1, 1, 0],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  delay: i * 0.1,
-                }}
-              />
-            ))}
+          {isPenguinHovered && (
+            <>
+              {[...Array(8)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute h-2 w-2 rounded-full bg-white"
+                  style={{
+                    left: '50%',
+                    bottom: '35%',
+                  }}
+                  initial={{ scale: 0, x: 0, y: 0, opacity: 1 }}
+                  animate={{
+                    scale: [0, 1, 0],
+                    x: Math.cos((i * Math.PI * 2) / 8) * 100,
+                    y: Math.sin((i * Math.PI * 2) / 8) * 100,
+                    opacity: [1, 1, 0],
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    delay: i * 0.1,
+                  }}
+                />
+              ))}
+            </>
+          )}
         </div>
       </motion.div>
     </div>
