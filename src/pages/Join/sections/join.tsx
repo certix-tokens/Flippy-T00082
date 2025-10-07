@@ -12,55 +12,59 @@ type Item = {
 };
 
 const items: Item[] = [
-  { class: 'w-10 h-10 sm:w-16 sm:h-16', path: Tele },
-  { class: 'w-10 h-10 sm:w-16 sm:h-16', path: twitter },
-  { class: 'w-10 h-10 sm:w-16 sm:h-16', path: chart },
-  { class: 'w-10 h-10 sm:w-16 sm:h-16', path: z },
-  { class: 'w-36 h-36 sm:w-[370px] sm:h-[370px] mt-4 ml-60 sm:ml-0', path: Joinimg },
+  { class: 'w-8 h-8 md:w-16 md:h-16', path: Tele },
+  { class: 'w-8 h-8 md:w-16 md:h-16', path: twitter },
+  { class: 'w-8 h-8 md:w-16 md:h-16', path: chart },
+  { class: 'w-8 h-8 md:w-16 md:h-16', path: z },
+ 
 ];
 
 function Join() {
   return (
-    <div className="relative h-[86vh] overflow-hidden">
+    <div className="relative h-[87vh] overflow-hidden">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${Joinbg})` }}
       >
         <div className="flex min-h-screen items-start justify-center px-4 sm:px-6 md:px-0">
-          <div className="mt-36 sm:mt-40 max-w-3xl text-center">
+          <div className="absolute top-[10%] max-w-[300px] sm:max-w-[500px] md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1200px] 2xl:max-w-[1592px] text-center">
             {/* Heading */}
-            <motion.h1
-              className="font-jack mx-auto text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-normal text-white break-words"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ type: 'spring', stiffness: 120, damping: 18, delay: 0.1 }}
+            <h1
+              className="font-jack mx-auto text-4xl font-normal break-words text-white sm:text-[45px] md:text-7xl  lg:text-[94px] xl:text-[110px] 2xl:text-[150px]"
+            
             >
               JOIN COMMUNITY
-            </motion.h1>
+            </h1>
 
             {/* Paragraph */}
-            <motion.p
-              className="font-jel mx-auto mt-10 sm:mt-6 text-sm sm:text-base md:text-lg text-white break-words"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ type: 'spring', stiffness: 120, damping: 18, delay: 0.2 }}
+            <p
+              className="font-jel mx-auto mt-10 sm:text-left text-sm break-words text-white sm:mt-6 sm:text-[12px] text-[10px] md:text-lg lg:text-[15px] xl:text-[20px]"
+            
             >
-            This is a short explanation. Flippy is a fun and interactive platform. Keep it short, clear, and engaging to capture attention. Flippy is a fun and interactive platform. Keep it short, clear, and engaging to capture attention. This is a short explanation. Make it short and clear to keep students attentive. This is a short explanation.
-            </motion.p>
+              This is a short explanation. Flippy is a fun and interactive
+              platform. Keep it short, clear, and engaging to capture attention.
+              Flippy is a fun and interactive platform. Keep it short, clear,
+              and engaging to capture attention. This is a short explanation.
+              Make it short and clear to keep students attentive. This is a
+              short explanation.
+            </p>
 
             {/* Icons */}
-            <div className="flex flex-wrap md:flex-1 justify-center items-center gap-6 sm:gap-14 mt-10 sm:mt-10">
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-14 md:flex-1">
               {items.map((item, index) => (
-                <img
-                  key={index}
-                  src={item.path}
-                  className={`${item.class} object-contain`}
-                  alt={`icon-${index}`}
-                />
+                <div className='flex justify-center '>
+                  <img
+                    key={index}
+                    src={item.path}
+                    className={`${item.class} object-contain xl:mt-10 lg:mt-15 md:mt-20 sm:mt-15 mt-10 `}
+                    alt={`icon-${index}`}
+                  />
+                </div>
               ))}
+            </div>
+            <div className='flex'>
+              <img src={Joinimg} alt="" className='absolute 2xl:right-60 2xl:top-[67%] xl:right-10 xl:top-[70%] lg:right-5 h-auto lg:w-[280px] lg:top-[65%] md:w-[230px] md:-right-5 md:top-[70%] xl:w-[320px] sm:w-[200px] sm:right-0 sm:top-[110%] w-[190px] -right-20' />
             </div>
           </div>
         </div>

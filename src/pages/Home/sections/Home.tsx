@@ -32,7 +32,7 @@ const container = {
 
 function Home() {
   return (
-    <div className="relative z-0 h-auto md:h-[87vh] overflow-y-hidden">
+    <div className="relative z-0 h-auto md:h-[87vh] overflow-y-hidden overflow-x-hidden">
       {/* Background Layer */}
       <motion.div
         className="absolute inset-0 scale-x-[-1] bg-cover              bg-[position:56%_center] 

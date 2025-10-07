@@ -59,38 +59,14 @@ function Contact() {
         transition={{ duration: 1.2, ease: 'easeOut' }}
       >
   <div className="relative h-full w-full flex flex-col items-center" onMouseMove={handleMouseMove}>
-          <div className="mt-[100px] text-center md:mt-[50px] lg:mt-[100px] xl:mt-[50px]">
+          <div className="group mt-[100px] text-center md:mt-[50px] lg:mt-[100px] xl:mt-[50px]">
             {/* Animated Title */}
-            <motion.h1
-              className="font-jacks 2xl:[150px] text-5xl font-normal text-white md:text-7xl xl:text-8xl"
-              initial={{ y: -50, opacity: 0 }}
-              animate={{ y: 0, opacity: isHovered ? 0 : 1 }}
-              transition={{
-                y: { type: 'spring', stiffness: 100, damping: 15 },
-                opacity: { duration: 0.3 },
-              }}
+            <h1
+              className="font-jacks 2xl:[150px] text-5xl font-normal text-white md:text-7xl xl:text-8xl opacity-100 group-hover:opacity-0"
+          
             >
-              {['A', 'B', 'O', 'U', 'T', ' ', 'U', 'S'].map((letter, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: i * 0.1,
-                    type: 'spring',
-                    stiffness: 200,
-                  }}
-                  whileHover={{
-                    scale: 1.2,
-                    color: '#FFD700',
-                    textShadow: '0 0 20px rgba(255, 215, 0, 0.8)',
-                  }}
-                  className="inline-block"
-                >
-                  {letter === ' ' ? '\u00A0' : letter}
-                </motion.span>
-              ))}
-            </motion.h1>
+             About us
+            </h1>
 
             {/* Content Box with Stagger Animation */}
             <motion.div

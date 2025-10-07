@@ -69,7 +69,7 @@ function NavItem() {
       <div
         role="dialog"
         aria-modal="true"
-        className={`fixed top-0 right-0 h-full w-64 overflow-y-auto overscroll-contain transform rounded-l-[20px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] ${
+        className={`fixed top-0 right-0 h-full max-w-[277px] overflow-y-auto overscroll-contain transform rounded-l-[20px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } z-60 flex flex-col gap-y-8 px-6 transition-transform duration-300 ease-in-out`}
       >
