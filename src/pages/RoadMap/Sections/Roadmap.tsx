@@ -5,7 +5,7 @@ import gif2 from '../../../assets/Images/gif/1gif.gif';
 import gif3 from '../../../assets/Images/gif/5gif.gif';
 import gif4 from '../../../assets/Images/gif/3gif.gif';
 import gif5 from '../../../assets/Images/gif/4gif.gif';
-
+import { motion } from 'framer-motion';
 function Roadmap() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -15,9 +15,13 @@ function Roadmap() {
 
   return (
     <div className="relative min-h-screen w-full overflow-visible">
-      <div
+      <motion.div
         className="relative w-full min-h-screen inset-0 bg-cover bg-[position:60%_center] sm:bg-[position:60%_center] md:bg-center"
         style={{ backgroundImage: `url(${Roadmapbg})` }}
+         initial={{ scale: 0.95, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 1, ease: 'easeOut' }}
+        
       >
         <div className="pt-[100px] text-center">
           <h1 className="font-jack text-5xl font-normal text-white md:text-7xl xl:text-8xl">
@@ -214,7 +218,7 @@ function Roadmap() {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
