@@ -1,10 +1,5 @@
 import Roadmapbg from '../../../assets/Images/roadmapbg.png';
 import { useState } from 'react';
-import Pen1 from '../../../assets/Images/1.png';
-import Pen2 from '../../../assets/Images/2.png';
-import Pen3 from '../../../assets/Images/3.png';
-import Pen4 from '../../../assets/Images/4.png';
-import Pen5 from '../../../assets/Images/5.png';
 import gif1 from '../../../assets/Images/gif/2gif.gif';
 import gif2 from '../../../assets/Images/gif/1gif.gif';
 import gif3 from '../../../assets/Images/gif/5gif.gif';
@@ -19,12 +14,12 @@ function Roadmap() {
   };
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden">
+    <div className="relative min-h-screen w-full overflow-visible">
       <div
-        className="fixed inset-0 bg-cover sm:bg-[position:60%_center] md:bg-center"
+        className="relative w-full min-h-screen inset-0 bg-cover bg-[position:60%_center] sm:bg-[position:60%_center] md:bg-center"
         style={{ backgroundImage: `url(${Roadmapbg})` }}
       >
-        <div className="mt-[155px] text-center">
+        <div className="pt-[100px] text-center">
           <h1 className="font-jack text-5xl font-normal text-white md:text-7xl xl:text-8xl">
             ROAD MAP
           </h1>
@@ -32,14 +27,14 @@ function Roadmap() {
 
         {/* Mobile pyramid layout (1-2-2) */}
 
-        <div className="mt-10 grid grid-cols-1 gap-10 overflow-y-auto px-4 pb-20 sm:hidden sm:pl-30">
+        <div className="mt-10 grid grid-cols-1 gap-10 overflow-y-hidden px-4 pb-20 sm:hidden sm:pl-30">
           <div
-            className="group flex cursor-pointer space-x-5 sm:space-x-30"
+            className="group flex justify-center cursor-pointer space-x-5 sm:space-x-30"
             onClick={() => toggleOpacity(0)}
           >
-            <img src={Pen1} alt="Road map stage 1" className="h-auto w-30" />
+            <img src={gif1} alt=" Road map stage 1" className="h-auto w-30" />
             <div
-              className={`h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] transition-opacity duration-300 ${activeIndex === 0 ? 'opacity-100' : 'opacity-0'}`}
+              className={` h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] transition-opacity duration-300 ${activeIndex === 0 ? 'opacity-100' : 'opacity-0'}`}
             >
               <p className="font-jel text-center text-[12px] text-white">S-1</p>
               <p className="font-jel text-center text-[12px] text-white">
@@ -50,10 +45,10 @@ function Roadmap() {
           </div>
 
           <div
-            className="group flex cursor-pointer space-x-5 sm:space-x-30"
+            className="group flex justify-center cursor-pointer space-x-5 sm:space-x-30"
             onClick={() => toggleOpacity(1)}
           >
-            <img src={Pen2} alt="Road map stage 2" className="h-auto w-30" />
+            <img src={gif2} alt="Road map stage 2" className="h-auto w-30" />
             <div
               className={`h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] transition-opacity duration-300 ${activeIndex === 1 ? 'opacity-100' : 'opacity-0'}`}
             >
@@ -66,10 +61,10 @@ function Roadmap() {
           </div>
 
           <div
-            className="group flex cursor-pointer space-x-5 sm:space-x-30"
+            className="group flex justify-center cursor-pointer space-x-5 sm:space-x-30"
             onClick={() => toggleOpacity(2)}
           >
-            <img src={Pen3} alt="Road map stage 3" className="h-auto w-30" />
+            <img src={gif3} alt="Road map stage 3" className="h-auto w-30" />
             <div
               className={`h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] transition-opacity duration-300 ${activeIndex === 2 ? 'opacity-100' : 'opacity-0'}`}
             >
@@ -82,10 +77,10 @@ function Roadmap() {
           </div>
 
           <div
-            className="group flex cursor-pointer space-x-5 sm:space-x-30"
+            className="group flex justify-center cursor-pointer space-x-5 sm:space-x-30"
             onClick={() => toggleOpacity(3)}
           >
-            <img src={Pen4} alt="Road map stage 4" className="h-auto w-30" />
+            <img src={gif4} alt="Road map stage 4" className="h-auto w-30" />
             <div
               className={`h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] transition-opacity duration-300 ${activeIndex === 3 ? 'opacity-100' : 'opacity-0'}`}
             >
@@ -98,10 +93,10 @@ function Roadmap() {
           </div>
 
           <div
-            className="group flex cursor-pointer space-x-5 sm:space-x-30"
+            className="group flex justify-center cursor-pointer space-x-5 sm:space-x-30"
             onClick={() => toggleOpacity(4)}
           >
-            <img src={Pen5} alt="Road map stage 5" className="h-auto w-30" />
+            <img src={gif5} alt="Road map stage 5" className="h-auto w-30" />
             <div
               className={`h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] transition-opacity duration-300 ${activeIndex === 4 ? 'opacity-100' : 'opacity-0'}`}
             >
