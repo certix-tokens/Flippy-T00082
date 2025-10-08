@@ -79,7 +79,7 @@ function Contact() {
 
 
   return (
-    <div className="relative z-0 h-[86.5vh] overflow-x-hidden overflow-y-hidden">
+    <div className="relative z-0 h-[86.5vh] overflow-hidden overflow-x-hidden overflow-y-hidden ">
       <motion.div
         className="absolute inset-0  bg-cover bg-[position:70%_center] md:bg-center"
         style={{ backgroundImage: `url(${Contactus})` }}

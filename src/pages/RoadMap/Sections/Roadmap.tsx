@@ -24,7 +24,7 @@ function Roadmap() {
   };
 
   return (
-    <div className="relative h-auto w-full overflow-x-hidden md:h-[86.5vh]">
+    <div className="relative h-auto w-full overflow-y-hidden overflow-x-hidden md:h-[86.5vh]">
       <motion.div
         className="relative inset-0 h-auto w-full bg-cover bg-[position:60%_center] sm:bg-[position:60%_center] md:h-[86.5vh] md:bg-center"
         style={{ backgroundImage: `url(${Roadmapbg})` }}
