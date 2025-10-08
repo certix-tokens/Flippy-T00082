@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform, useSpring ,  Variants  } from 'framer-motion';
 import { useState } from 'react';
-import Contactus from '../../../assets/Images/aboutus-bg.png';
+import Contactus from '../../../assets/Images/aboutus-bg.webp';
 import Pengleft from '../../../assets/Images/prngleft.png';
 import Pengright from '../../../assets/Images/pengright.png';
 import pengif from '../../../assets/Images/P1-v2.gif';

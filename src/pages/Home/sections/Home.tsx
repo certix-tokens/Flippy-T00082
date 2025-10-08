@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import heroBg from '../../../assets/Images/herobg.png';
+import heroBg from '../../../assets/Images/herobg.webp';
 import Tele from '../../../assets/Images/tele.png';
 import X from '../../../assets/Images/twitter.png';
 import build from '../../../assets/Images/build.png';

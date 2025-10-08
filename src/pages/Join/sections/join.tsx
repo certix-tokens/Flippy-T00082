@@ -1,4 +1,4 @@
-import Joinbg from '../../../assets/Images/joinbg.png';
+import Joinbg from '../../../assets/Images/joinbg.webp';
 import { motion ,Variants } from 'framer-motion';
 import Tele from '../../../assets/Images/svg/Vector.svg';
 import twitter from '../../../assets/Images/svg/twitter(6).svg';

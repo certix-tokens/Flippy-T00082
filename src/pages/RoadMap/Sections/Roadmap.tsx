@@ -1,4 +1,4 @@
-import Roadmapbg from '../../../assets/Images/roadmapbg.png';
+import Roadmapbg from '../../../assets/Images/roadmapbg.webp';
 import { useState } from 'react';
 import gif1 from '../../../assets/Images/gif/2gif.gif';
 import gif2 from '../../../assets/Images/gif/1gif.gif';

@@ -1,4 +1,4 @@
-import Howtobuybg from '../../../assets/Images/howtobuy.png';
+import Howtobuybg from '../../../assets/Images/howtobuy.webp';
 import pengugif from '../../../assets/Images/P1-v2.gif';
 import { motion,  Variants  } from 'framer-motion';
 import { useState } from 'react';

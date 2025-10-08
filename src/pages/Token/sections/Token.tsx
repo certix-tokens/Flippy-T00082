@@ -1,4 +1,4 @@
-import Tokenbg from '../../../assets/Images/tokenomicsbg.png';
+import Tokenbg from '../../../assets/Images/tokenomicsbg.webp';
 import Toke1 from '../../../assets/Images/toke1.png';
 import Toke2 from '../../../assets/Images/toke2.png';
 import Toke3 from '../../../assets/Images/toke3.png';
