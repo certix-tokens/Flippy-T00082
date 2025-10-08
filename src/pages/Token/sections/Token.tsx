@@ -2,9 +2,6 @@ import Tokenbg from '../../../assets/Images/tokenomicsbg.png';
 import Toke1 from '../../../assets/Images/toke1.png';
 import Toke2 from '../../../assets/Images/toke2.png';
 import Toke3 from '../../../assets/Images/toke3.png';
-import gif1 from '../../../assets/Images/gif/2gif.gif';
-import gif2 from '../../../assets/Images/gif/5gif.gif';
-import gif3 from '../../../assets/Images/gif/4gif.gif';
 import { motion,  Variants  } from 'framer-motion';
 
 
@@ -32,7 +29,7 @@ function Token() {
 
 
   return (
-    <div className="relative h-[87vh] overflow-y-hidden">
+    <div className="relative h-[86.5vh] overflow-x-hidden overflow-y-hidden">
       <motion.div
         className="absolute inset-0 bg-cover bg-[position:70%_center] md:bg-center"
         style={{ backgroundImage: `url(${Tokenbg})` }}

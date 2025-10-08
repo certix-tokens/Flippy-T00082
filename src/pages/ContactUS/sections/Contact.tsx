@@ -79,11 +79,11 @@ function Contact() {
 
 
   return (
-    <div className="relative z-0  h-[87vh] overflow-y-hidden">
+    <div className="relative z-0 h-[86.5vh] overflow-x-hidden overflow-y-hidden">
       <motion.div
         className="absolute inset-0  bg-cover bg-[position:70%_center] md:bg-center"
         style={{ backgroundImage: `url(${Contactus})` }}
-            initial={{ scale: 1.1, opacity: 0 }}
+            initial={{ scale: 1.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.2, ease: 'easeOut' }}
       >
@@ -92,7 +92,7 @@ function Contact() {
             {/* Animated Title */}
             <motion.h1
             
-              className="font-jacks 2xl:[150px] text-5xl font-normal text-white md:text-7xl xl:text-8xl opacity-100 group-hover:opacity-0"
+              className="font-jacks 2xl:text-[150px] text-5xl font-normal text-white md:text-7xl xl:text-8xl opacity-100 group-hover:opacity-0"
     variants={titleVariant}
               initial="hidden"
               animate="show"
@@ -105,7 +105,7 @@ function Contact() {
 
             {/* Content Box with Stagger Animation */}
             <motion.div
-              className="mx-auto -mt-40 hidden overflow-hidden rounded-3xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] text-center md:mt-10 md:block md:w-[600px] lg:mt-5 lg:block lg:w-[800px] xl:mt-10 xl:block xl:w-[1000px] 2xl:-mt-20 2xl:block 2xl:w-[1500px]"
+              className="mx-auto -mt-20 hidden overflow-hidden rounded-3xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] text-center md:mt-10 md:block md:w-[600px] lg:mt-5 lg:block lg:w-[800px] xl:mt-10 xl:block xl:w-[1000px] 2xl:-mt-40 2xl:block 2xl:w-[1500px]"
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{
                 opacity: isHovered ? 1 : 0,

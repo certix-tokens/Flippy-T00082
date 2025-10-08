@@ -1,11 +1,11 @@
 import Joinbg from '../../../assets/Images/joinbg.png';
 import { motion ,Variants } from 'framer-motion';
-import Tele from '../../../assets/Images/tele.png';
-import twitter from '../../../assets/Images/twitter.png';
-import chart from '../../../assets/Images/build.png';
-import z from '../../../assets/Images/z.png';
-import Joinimg from '../../../assets/Images/join.png';
-
+import Tele from '../../../assets/Images/svg/Vector.svg';
+import twitter from '../../../assets/Images/svg/twitter(6).svg';
+import chart from '../../../assets/Images/svg/1952841104.svg';
+import z from '../../../assets/Images/svg/Vector (1).svg';
+import Joinimggif from '../../../assets/Images/gif/4gif.gif';
+import { useState } from "react";
 type Item = {
   class: string;
   path: string;
@@ -29,9 +29,10 @@ function Join() {
       transition: { delay: 0.6, duration: 2, type: 'spring', stiffness: 100 },
     },
   };
+const [isSpinning, setIsSpinning] = useState(false);
 
   return (
-    <div className="relative h-[87vh] overflow-hidden">
+    <div className="relative h-[86.5vh] overflow-hidden">
       {/* Background */}
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
@@ -75,26 +76,55 @@ function Join() {
             <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-14 md:flex-1">
               {items.map((item, index) => (
                 <div className='flex justify-center '>
-                  <img
+                  <motion.img
                     key={index}
                     src={item.path}
                     className={`${item.class} object-contain xl:mt-10 lg:mt-15 md:mt-20 sm:mt-15 mt-10 `}
                     alt={`icon-${index}`}
+                      whileHover={{
+            scale: 1.2, // 🔍 slightly grow
+            rotate: 10, // 🔁 little tilt
+            filter: "drop-shadow(0 0 8px rgba(255,255,255,0.7))", // ✨ glow
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 15,
+          }}
+             variants={titleVariant}
+              initial="hidden"
+              animate="show"
                   />
                 </div>
               ))}
             </div>
             <div className='flex'>
-              <motion.img src={Joinimg} alt="" className='absolute 2xl:right-60 2xl:top-[67%] xl:right-10 xl:top-[70%] lg:right-5 h-auto lg:w-[280px] lg:top-[65%] md:w-[230px] md:-right-5 md:top-[70%] xl:w-[320px] sm:w-[200px] sm:right-0 sm:top-[110%] w-[190px] -right-20'
-                          initial={{ x: '50vw', opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{
-                type: 'tween',
-                ease: [0.22, 1, 0.36, 1],
-                duration: 1.2,
-              }}
-              
-              />
+    <motion.img
+      src={Joinimggif}
+      alt=""
+      onClick={() => setIsSpinning(!isSpinning)} // toggle spin
+      className="absolute 2xl:right-60 2xl:top-[67%] xl:right-10 xl:top-[70%] lg:right-5 h-auto lg:w-[280px] lg:top-[65%] md:w-[230px] md:-right-5 md:top-[70%] xl:w-[320px] sm:w-[200px] sm:right-0 sm:top-[110%] w-[190px] -right-20 cursor-pointer"
+      style={{
+        transformOrigin: "center center",
+        perspective: 1000, // 👈 enables 3D depth
+      }}
+      initial={{ x: "50vw", opacity: 0 }}
+      animate={{
+        x: 0,
+        opacity: 1,
+        rotateY: isSpinning ? 360 : 0, // 👈 horizontal spin
+      }}
+      transition={{
+        type: "tween",
+        ease: "linear",
+        duration: 1.5,
+        rotateY: {
+          repeat: isSpinning ? 2 : 0, // continuous rotation
+          duration: 1.5,
+          ease: "linear",
+        },
+      }}
+    />
             </div>
           </div>
         </div>

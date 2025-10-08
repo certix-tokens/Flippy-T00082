@@ -25,7 +25,7 @@ function HowToBuy() {
 
   return (
     <motion.section
-      className="relative min-h-screen w-full overflow-x-hidden overflow-visible bg-cover bg-[position:70%_center] md:bg-center"
+      className="relative  h-[86.5vh] w-full overflow-x-hidden  bg-cover bg-[position:70%_center] md:bg-center"
       style={{ backgroundImage: `url(${Howtobuybg})` }}
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -72,6 +72,8 @@ function HowToBuy() {
                 ease: [0.22, 1, 0.36, 1],
                 duration: 1.2,
               }}
+
+              
             />
           </div>
         </div>

@@ -27,7 +27,7 @@ const container = {
 
 function Home() {
   return (
-    <div className="relative z-0 h-auto md:h-[87vh] overflow-y-hidden overflow-x-hidden">
+    <div className="relative z-0 h-auto md:h-[86.5vh] overflow-y-hidden overflow-x-hidden">
       {/* 🎭 Realistic Stage Curtains */}
       <motion.div
         className="absolute top-0 left-0 w-1/2 h-full z-[50]"
@@ -86,9 +86,9 @@ function Home() {
       <motion.div
         className="absolute inset-0 scale-x-[-1] bg-cover bg-[position:56%_center] md:bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
-        initial={{ scale: 1.1, opacity: 0 }}
+        initial={{ scale: 1.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.3, ease: 'easeOut', delay: 0.5 }}
+        transition={{ duration: 1.3, ease: 'easeOut', delay: 0.3 }}
       />
 
       {/* Content Layer */}
@@ -125,7 +125,7 @@ function Home() {
           transition={{ delay: 0.5, duration: 1 }}
         
         >
-          <div className="rounded-2xl xl:-mt-60 -mt-60 md:w-[1000px] w-[345px] h-auto bg-[#9318182B]/17 p-6 backdrop-blur-xs xl:h-50">
+          <div className="rounded-2xl xl:-mt-60 -mt-10 md:w-[1000px] w-[345px] h-40 sm:h-auto bg-[#9318182B]/17 p-6 backdrop-blur-sm xl:h-50">
             <p className="hidden md:block font-jel mb-[20px] px-4 text-[11px] md:text-[20px] font-medium text-white">
               Welcome to Flippy!
             </p>
