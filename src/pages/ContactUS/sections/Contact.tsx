@@ -92,7 +92,7 @@ function Contact() {
             {/* Animated Title */}
             <motion.h1
             
-              className="font-jacks 2xl:text-[150px] text-5xl font-normal text-white md:text-7xl xl:text-8xl opacity-100 group-hover:opacity-0"
+              className="font-jacks 2xl:text-[150px] text-5xl font-normal text-white md:text-[90px] opacity-100 group-hover:opacity-0"
     variants={titleVariant}
               initial="hidden"
               animate="show"
@@ -105,7 +105,7 @@ function Contact() {
 
             {/* Content Box with Stagger Animation */}
             <motion.div
-              className="mx-auto -mt-20 hidden overflow-hidden rounded-3xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] text-center md:mt-10 md:block md:w-[600px] lg:mt-5 lg:block lg:w-[800px] xl:mt-10 xl:block xl:w-[1000px] 2xl:-mt-40 2xl:block 2xl:w-[1500px]"
+              className="mx-auto -mt-20 hidden overflow-hidden rounded-3xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] text-center md:mt-10 md:block md:w-[600px] lg:mt-5 lg:block lg:w-[800px] xl:-mt-25 xl:block xl:w-[600px] 2xl:-mt-40 2xl:block 2xl:w-[1500px]"
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{
                 opacity: isHovered ? 1 : 0,
@@ -130,7 +130,7 @@ function Contact() {
                 animate={{ opacity: isHovered ? 1 : 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <p className="font-jel mx-auto px-20 py-20 h-auto text-left text-[20px] text-white md:text-[8px] lg:text-[8px] xl:text-[10px] 2xl:text-[20px]">
+                <p className="font-jel mx-auto md:px-8 md:py-8 2xl:px-20 2xl:py-20 h-auto text-left text-[20px] text-white md:text-[8px] lg:text-[8px] xl:text-[10px] 2xl:text-[20px]">
                   This is a short explanation. Flippy is a fun and interactive
                   platform. Keep it short, clear, and engaging to capture
                   attention. Flippy is a fun and interactive platform. Keep it

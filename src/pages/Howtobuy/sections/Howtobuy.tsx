@@ -25,14 +25,14 @@ function HowToBuy() {
 
   return (
     <motion.section
-      className="relative  h-[86.5vh] w-full overflow-x-hidden  bg-cover bg-[position:70%_center] md:bg-center"
+      className="relative min-h-screen w-full overflow-x-hidden  bg-cover bg-[position:70%_center] md:bg-center"
       style={{ backgroundImage: `url(${Howtobuybg})` }}
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.2, ease: 'easeOut' }}
     >
       <div className="pt-[72px] text-center md:pt-[65px]">
-        <motion.h1 className="font-jack text-[40px] font-normal text-white sm:text-[90px] xl:text-[120px] 2xl:text-[150px]"
+        <motion.h1 className="font-jack text-[40px] font-normal text-white sm:text-[90px]  2xl:text-[150px]"
 
         variants={titleVariant}
               initial="hidden"

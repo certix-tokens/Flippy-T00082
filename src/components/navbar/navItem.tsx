@@ -37,7 +37,7 @@ function NavItem() {
   }, [isOpen]);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-[#4B181B] h-[72px]">
+    <div className="fixed top-0 left-0 right-0 z-100 bg-[#4B181B] h-[72px]">
       {/* Header */}
       <div className="relative z-50 flex items-center justify-between px-6 h-full md:justify-center">
         {/* Logo on LEFT */}

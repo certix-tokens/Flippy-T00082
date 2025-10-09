@@ -23,10 +23,55 @@ function Roadmap() {
     },
   };
 
+  // Roadmap data for better maintainability
+  const roadmapSteps = [
+    { id: 0, gif: gif1, alt: "Road map stage 1", stage: "S-1" },
+    { id: 1, gif: gif2, alt: "Road map stage 2", stage: "S-2" },
+    { id: 2, gif: gif3, alt: "Road map stage 3", stage: "S-3" },
+    { id: 3, gif: gif4, alt: "Road map stage 4", stage: "S-4" },
+    { id: 4, gif: gif5, alt: "Road map stage 5", stage: "S-5" },
+  ];
+
+  const descriptionText = "This is a short explanation. make it short and clear to keep students attentive.";
+
+  // Desktop configuration for each step
+  const desktopConfigs = [
+    // Stage 1
+    {
+      boxClasses: "sm:top-[60%] sm:left-10 md:top-[51%] md:left-1 lg:top-[50%] lg:left-2 xl:top-[45%] 2xl:top-[32%] 2xl:left-20 z-0",
+      imageClasses: "z-90 sm:top-[55%] sm:left-10 sm:w-[100px] md:top-[62%] md:left-5 md:w-[150px] lg:top-[59%] lg:w-[170px] xl:top-[50%] xl:left-5 xl:w-[222px] 2xl:top-[50%] 2xl:left-30",
+      animation: { x: '-100vw', opacity: 0 }
+    },
+    // Stage 2
+    {
+      boxClasses: "sm:top-[50%] sm:left-30 md:top-[48%] md:left-10 lg:top-[45%] lg:left-3 xl:top-[42%] xl:left-10 2xl:top-[22%] 2xl:left-20 z-0",
+      imageClasses: "z-90 sm:top-[50%] sm:left-2 sm:w-[100px] md:top-[45%] md:left-10 md:w-[150px] lg:left-10 lg:top-[45%] lg:w-[170px] xl:top-[40%] xl:left-10 xl:w-[222px] 2xl:top-[40%] 2xl:left-20",
+      animation: { x: "-100vw", y: "100vh", opacity: 0 }
+    },
+    // Stage 3
+    {
+      boxClasses: "z-0 sm:top-[70%] sm:left-10 md:top-[49%] md:left-10 lg:top-[45%] lg:left-6 xl:top-[42%] xl:left-20 2xl:top-[30%] 2xl:left-20",
+      imageClasses: "z-90 sm:top-[52%] sm:left-1 sm:w-[100px] md:top-[46%] md:left-10 md:w-[150px] lg:top-[47%] lg:left-16 lg:w-[170px] xl:top-[43%] xl:left-20 xl:w-[222px] 2xl:top-[40%] 2xl:left-20",
+      animation: { y: '100vw', opacity: 0 }
+    },
+    // Stage 4
+    {
+      boxClasses: "z-0 sm:top-[52%] sm:right-30 md:top-[51%] md:-right-12 lg:-right-18 lg:top-[48%] xl:top-[44%] xl:-right-20 2xl:top-[28%] 2xl:right-10",
+      imageClasses: "z-90 sm:top-[54%] sm:right-5 sm:w-[100px] md:top-[49%] md:-right-12 md:w-[150px] lg:top-[49%] lg:-right-10 lg:w-[170px] xl:top-[46%] xl:-right-20 xl:w-[222px] 2xl:top-[45%] 2xl:right-10",
+      animation: { x: "100vw", y: "100vh", opacity: 0 }
+    },
+    // Stage 5
+    {
+      boxClasses: "sm:top-[60%] sm:right-10 md:top-[56%] md:right-5 lg:top-[53%] xl:top-[55%] xl:right-5 2xl:top-[39%] 2xl:right-25 z-0",
+      imageClasses: " z-90 sm:top-[58%] sm:right-10 sm:w-[100px] md:top-[65%] md:right-5 md:w-[150px] lg:top-[62%] lg:w-[170px] xl:top-[54%] xl:right-5 xl:w-[222px] 2xl:top-[55%] 2xl:right-30",
+      animation: { x: '100vw', opacity: 0 }
+    }
+  ];
+
   return (
-    <div className="relative h-auto w-full overflow-y-hidden overflow-x-hidden md:h-[86.5vh]">
+    <div className="relative h-auto w-full overflow-hidden">
       <motion.div
-        className="relative inset-0 h-auto w-full bg-cover bg-[position:60%_center] sm:bg-[position:60%_center] md:h-[86.5vh] md:bg-center"
+        className="relative inset-0 w-full bg-cover bg-[position:60%_center]  md:bg-center overflow-hidden "
         style={{ backgroundImage: `url(${Roadmapbg})` }}
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -43,259 +88,92 @@ function Roadmap() {
           </motion.h1>
         </div>
 
-        {/* Mobile pyramid layout (1-2-2) */}
-
-        <div className="mt-10 grid grid-cols-1 gap-10 overflow-y-hidden px-4 pb-20 sm:hidden sm:pl-30">
-          <div
-            className="group flex cursor-pointer justify-center space-x-5 sm:space-x-30"
-            onClick={() => toggleOpacity(0)}
-          >
-            <img src={gif1} alt=" Road map stage 1" className="h-auto w-30" />
+        {/* Mobile Layout */}
+        <div className="mt-10 grid grid-cols-1 gap-8 px-4 pb-20 sm:hidden">
+          {roadmapSteps.map((step, index) => (
             <div
-              className={`h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] transition-opacity duration-300 ${activeIndex === 0 ? 'opacity-100' : 'opacity-0'}`}
+              key={step.id}
+              className="group flex cursor-pointer justify-center space-x-4"
+              onClick={() => toggleOpacity(index)}
             >
-              <p className="font-jel text-center text-[12px] text-white">S-1</p>
-              <p className="font-jel text-center text-[12px] text-white">
-                This is a short explanation. make it short and clear to keep
-                students attentive.
-              </p>
+              <img 
+                src={step.gif} 
+                alt={step.alt} 
+                className="h-auto w-24 transition-transform duration-300 hover:scale-105" 
+              />
+              <div
+                className={`h-auto  max-w-[169px]  rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-4 transition-all duration-300 ${
+                  activeIndex === index 
+                    ? 'opacity-100 scale-100' 
+                    : 'opacity-0 scale-95'
+                }`}
+              >
+                <p className="font-jel text-center text-xs text-white">{step.stage}</p>
+                <p className="font-jel text-center text-xs text-white mt-2">
+                  {descriptionText}
+                </p>
+              </div>
             </div>
-          </div>
-
-          <div
-            className="group flex cursor-pointer justify-center space-x-5 sm:space-x-30"
-            onClick={() => toggleOpacity(1)}
-          >
-            <img src={gif2} alt="Road map stage 2" className="h-auto w-30" />
-            <div
-              className={`h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] transition-opacity duration-300 ${activeIndex === 1 ? 'opacity-100' : 'opacity-0'}`}
-            >
-              <p className="font-jel text-center text-[12px] text-white">S-2</p>
-              <p className="font-jel text-center text-[12px] text-white">
-                This is a short explanation. make it short and clear to keep
-                students attentive.
-              </p>
-            </div>
-          </div>
-
-          <div
-            className="group flex cursor-pointer justify-center space-x-5 sm:space-x-30"
-            onClick={() => toggleOpacity(2)}
-          >
-            <img src={gif3} alt="Road map stage 3" className="h-auto w-30" />
-            <div
-              className={`h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] transition-opacity duration-300 ${activeIndex === 2 ? 'opacity-100' : 'opacity-0'}`}
-            >
-              <p className="font-jel text-center text-[12px] text-white">S-3</p>
-              <p className="font-jel text-center text-[12px] text-white">
-                This is a short explanation. make it short and clear to keep
-                students attentive.
-              </p>
-            </div>
-          </div>
-
-          <div
-            className="group flex cursor-pointer justify-center space-x-5 sm:space-x-30"
-            onClick={() => toggleOpacity(3)}
-          >
-            <img src={gif4} alt="Road map stage 4" className="h-auto w-30" />
-            <div
-              className={`h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] transition-opacity duration-300 ${activeIndex === 3 ? 'opacity-100' : 'opacity-0'}`}
-            >
-              <p className="font-jel text-center text-[12px] text-white">S-4</p>
-              <p className="font-jel text-center text-[12px] text-white">
-                This is a short explanation. make it short and clear to keep
-                students attentive.
-              </p>
-            </div>
-          </div>
-
-          <div
-            className="group flex cursor-pointer justify-center space-x-5 sm:space-x-30"
-            onClick={() => toggleOpacity(4)}
-          >
-            <img src={gif5} alt="Road map stage 5" className="h-auto w-30" />
-            <div
-              className={`h-auto max-w-[169px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-[18px] py-[18px] transition-opacity duration-300 ${activeIndex === 4 ? 'opacity-100' : 'opacity-0'}`}
-            >
-              <p className="font-jel text-center text-[12px] text-white">S-5</p>
-              <p className="font-jel text-center text-[12px] text-white">
-                This is a short explanation. make it short and clear to keep
-                students attentive.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
 
-        {/* Desktop layout (unchanged) */}
-        <div className="hidden grid-cols-5 px-30 sm:flex md:grid">
-          {/* image 1 */}
+        {/* Desktop Layout */}
+        <div className="hidden sm:grid sm:grid-cols-5 relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] xl:min-h-[900px]">
+          {roadmapSteps.map((step, index) => {
+            const config = desktopConfigs[index];
+            const animationDelay = index === 0 || index === 4 ? 1.2 : index === 1 || index === 3 ? 0.8 : 0.1;
+            
+            return (
+              <div
+                key={step.id}
+                className="group flex flex-row justify-center relative"
+                
+              >
+                {/* Description Box */}
+                <div
+                  className={`absolute rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-6 text-left text-white opacity-0 transition-all duration-300 z-10 w-[180px] md:w-[150px] lg:w-[220px] xl:w-[200px] 2xl:w-[260px] ${
+                    config.boxClasses
+                  } ${
+                    activeIndex === index || activeIndex === null
+                      ? 'md:opacity-0' 
+                      : 'md:opacity-0'
+                  } md:group-hover:opacity-100`}
+                >
+                  <p className="font-jel text-center text-sm md:text-[8px] lg:text-[10px] 2xl:text-lg">
+                    {step.stage}
+                  </p>
+                  <p className="font-jel text-left text-xs md:text-[8px] lg:text-[10px] 2xl:text-lg mt-2">
+                    {descriptionText}
+                  </p>
+                </div>
 
-          <div
-            className="group -ml-40 flex flex-row justify-center"
-            onClick={() => toggleOpacity(0)}
-          >
-            <div
-              className={`absolute rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-8 text-left text-white transition-opacity duration-300 sm:top-[60%] sm:left-10 sm:h-25 sm:w-[100px] md:top-[51%] md:h-40 md:w-[120px] md:opacity-0 md:group-hover:opacity-100 lg:top-[50%] lg:left-25 lg:w-[180px] xl:top-[43%] xl:w-[260px] 2xl:top-[50%] ${activeIndex === 0 ? 'opacity-100' : 'opacity-0'} `}
-            >
-              <p className="font-jel text-center sm:text-[6px] md:text-[10px] lg:text-[12px] xl:text-[16px]">
-                S-1
-              </p>
-              <p className="font-jel text-left sm:text-[6px] md:text-[12px] lg:text-[12px] xl:text-[16px]">
-                This is a short explanation. make it short and clear to keep
-                students
-              </p>
-            </div>
-            <div className="flex">
-              <motion.img
-                src={gif1}
-                alt=""
-                className="absolute h-auto sm:top-[68%] sm:left-10 sm:w-[100px] md:top-[62%] md:left-5 md:w-[150px] md:group-hover:top-[65%] lg:top-[59%] lg:w-[170px] lg:group-hover:top-[62%] xl:top-[53%] xl:left-5 xl:w-[222px] xl:group-hover:top-[55%] 2xl:top-[57%] 2xl:left-30 2xl:group-hover:top-[62%] 2xl:group-hover:w-[200px]"
-                initial={{ x: '-100vw', opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{
-                  type: 'tween',
-                  ease: [0.22, 1, 0.36, 1],
-                  duration: 1.2,
-                  delay: 1.2,
-                }}
-              />
-            </div>
-          </div>
-
-          {/* image 2 */}
-
-          <div
-            className="group flex flex-row justify-center"
-            onClick={() => toggleOpacity(1)}
-          >
-            <div
-           className={`absolute rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-8 text-left text-white transition-opacity duration-300 sm:top-[50%] sm:left-30 sm:h-25 sm:w-[100px] md:top-[48%] md:left-45 md:h-40 md:w-[120px] md:opacity-0 md:group-hover:opacity-100 lg:top-[45%] lg:w-[180px] xl:top-[39%] xl:left-65 xl:w-[260px] 2xl:top-[45%] 2xl:left-115 ${activeIndex === 1 ? 'opacity-100' : 'opacity-0'} `}
-            >
-              <p className="font-jel text-center sm:text-[6px] md:text-[12px] lg:text-[12px] xl:text-[16px]">
-                S-2
-              </p>
-              <p className="font-jel text-left sm:text-[6px] md:text-[12px] lg:text-[12px] xl:text-[16px]">
-                This is a short explanation. make it short and clear to keep
-                students
-              </p>
-            </div>
-            <div className="flex">
-              <motion.img
-                src={gif2}
-                alt=""
-                className="group-hover:transition-300 absolute h-auto sm:top-[58%] sm:left-30 sm:w-[100px] md:top-[54%] md:left-40 md:w-[150px] md:group-hover:top-[62%] lg:top-[51%] lg:w-[170px] lg:group-hover:top-[57%] xl:top-[45%] xl:left-70 xl:w-[222px] xl:group-hover:top-[50%] 2xl:top-[47%] 2xl:left-120 2xl:group-hover:top-[56%] 2xl:group-hover:w-[200px]"
-             initial={{ x: "-100vw", y: "100vh", opacity: 0 }} 
-  animate={{ x: 0, y: 0, opacity: 1 }} 
-  transition={{
-    type: "tween",
-    ease: [0.22, 1, 0.36, 1],
-    duration: 1.2,
-    delay: 0.8,
-  }}
-              />
-            </div>
-          </div>
-
-          {/* image 3 */}
-
-          <div
-            className="group flex flex-row justify-center"
-            onClick={() => toggleOpacity(2)}
-          >
-            <div
-              className={`absolute rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-8 text-left text-white transition-opacity duration-300 sm:top-[50%] sm:left-80 sm:h-25 sm:w-[100px] md:top-[49%] md:left-95 md:h-40 md:w-[120px] md:opacity-0 md:group-hover:opacity-100 lg:top-[45%] lg:left-110 lg:w-[180px] xl:top-[40%] xl:left-140 xl:w-[260px] 2xl:top-[45%] 2xl:left-200 ${activeIndex === 2 ? 'opacity-100' : 'opacity-0'} `}
-            >
-              <p className="font-jel text-center sm:text-[6px] md:text-[12px] lg:text-[12px] xl:text-[16px]">
-                S-3
-              </p>
-              <p className="font-jel text-left sm:text-[6px] md:text-[12px] lg:text-[12px] xl:text-[16px]">
-                This is a short explanation. make it short and clear to keep
-                students
-              </p>
-            </div>
-
-            <div className="flex justify-center">
-              <motion.img
-                src={gif3}
-                alt=""
-                className="absolute sm:top-[60%] sm:left-80 sm:w-[100px] md:top-[54%] md:left-90 md:w-[150px] md:group-hover:top-[64%] lg:top-[52%] lg:left-130 lg:w-[170px] lg:group-hover:top-[59%] xl:top-[47%] xl:left-155 xl:w-[222px] xl:group-hover:top-[52%] 2xl:top-[49%] 2xl:left-200 2xl:group-hover:top-[56%]"
-                initial={{ y: '100vw', opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{
-                  type: 'tween',
-                  ease: [0.22, 1, 0.36, 1],
-                  duration: 1.2,
-                  delay: 0.1,
-                }}
-              />
-            </div>
-          </div>
-
-          {/* image 4 */}
-
-          <div
-            className="group flex flex-row justify-center"
-            onClick={() => toggleOpacity(3)}
-          >
-            <div
-              className={`absolute rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-8 text-left text-white transition-opacity duration-300 sm:top-[52%] sm:right-30 sm:h-25 sm:w-[100px] md:top-[51%] md:right-45 md:h-40 md:w-[120px] md:opacity-0 md:group-hover:opacity-100 lg:top-[48%] lg:w-[180px] xl:top-[43%] xl:right-60 xl:w-[260px] 2xl:top-[46%] 2xl:right-120 ${activeIndex === 3 ? 'opacity-100' : 'opacity-0'}`}
-            >
-              <p className="font-jel text-center sm:text-[6px] md:text-[12px] lg:text-[12px] xl:text-[16px]">
-                S-4
-              </p>
-              <p className="font-jel text-left sm:text-[6px] md:text-[12px] lg:text-[12px] xl:text-[16px]">
-                This is a short explanation. make it short and clear to keep
-                students
-              </p>
-            </div>
-            <motion.img
-              src={gif4}
-              alt=""
-              className="absolute h-auto sm:top-[61%] sm:right-30 sm:w-[100px] md:top-[57%] md:right-40 md:w-[150px] md:group-hover:top-[66%] lg:top-[55%] lg:w-[170px] lg:group-hover:top-[61%] xl:top-[50%] xl:right-60 xl:w-[222px] xl:group-hover:top-[55%] 2xl:top-[52%] 2xl:right-120 2xl:group-hover:top-[59%]"
-
-                      initial={{ x: "100vw", y: "100vh", opacity: 0 }} 
-  animate={{ x: 0, y: 0, opacity: 1 }} 
-  transition={{
-    type: "tween",
-    ease: [0.22, 1, 0.36, 1],
-    duration: 1.2,
-    delay: 0.8,
-  }}
-        
-            />
-          </div>
-
-          {/* image 5 */}
-          <div
-            className="group flex flex-row justify-center"
-            onClick={() => toggleOpacity(4)}
-          >
-            <div
-              className={`absolute rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-8 text-left text-white transition-opacity duration-300 sm:top-[60%] sm:right-10 sm:h-25 sm:w-[100px] md:top-[56%] md:right-10 md:h-40 md:w-[120px] md:opacity-0 md:group-hover:opacity-100 lg:top-[54%] lg:w-[180px] xl:top-[48%] xl:right-5 xl:w-[260px] 2xl:top-[54%] 2xl:right-25 ${activeIndex === 4 ? 'opacity-100' : 'opacity-0'}`}
-            >
-              <p className="font-jel text-center sm:text-[6px] md:text-[12px] lg:text-[16px] xl:text-[16px]">
-                S-5
-              </p>
-              <p className="font-jel text-left sm:text-[6px] md:text-[12px] lg:text-[12px] xl:text-[16px]">
-                This is a short explanation. make it short and clear to keep
-                students
-              </p>
-            </div>
-            <motion.img
-              src={gif5}
-              alt=""
-              className="absolute h-auto sm:top-[68%] sm:right-10 sm:w-[100px] md:top-[65%] md:right-5 md:w-[150px] md:group-hover:top-[70%] lg:top-[62%] lg:w-[170px] lg:group-hover:top-[65%] xl:top-[59%] xl:right-5 xl:w-[222px] 2xl:top-[62%] 2xl:right-30 2xl:group-hover:top-[65%]"
-                  initial={{ x: '100vw', opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{
-                  type: 'tween',
-                  ease: [0.22, 1, 0.36, 1],
-                  duration: 1.2,
-                  delay: 1.2,
-                }}
-            />
-          </div>
+                {/* Animated Image */}
+                <motion.img
+                  src={step.gif}
+                  alt={step.alt}
+                  className={`absolute h-auto transition-all duration-300 cursor-pointer hover:scale-110 ${
+                    config.imageClasses
+                  } ${
+                    index === 0 ? 'md:group-hover:top-[65%] lg:group-hover:top-[62%] xl:group-hover:top-[55%] 2xl:group-hover:top-[52%]' :
+                    index === 1 ? 'md:group-hover:top-[62%] lg:group-hover:top-[57%] xl:group-hover:top-[50%] 2xl:group-hover:top-[42%]' :
+                    index === 2 ? 'md:group-hover:top-[64%] lg:group-hover:top-[59%] xl:group-hover:top-[52%] 2xl:group-hover:top-[46%]' :
+                    index === 3 ? 'md:group-hover:top-[66%] lg:group-hover:top-[61%] xl:group-hover:top-[55%] 2xl:group-hover:top-[47%]' :
+                    'md:group-hover:top-[70%] lg:group-hover:top-[65%] 2xl:group-hover:top-[59%]'
+                  }`}
+                  initial={config.animation}
+                  animate={{ x: 0, y: 0, opacity: 1 }}
+                  transition={{
+                    type: 'tween',
+                    ease: [0.22, 1, 0.36, 1],
+                    duration: 1.2,
+                    delay: animationDelay,
+                  }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                />
+              </div>
+            );
+          })}
         </div>
       </motion.div>
     </div>

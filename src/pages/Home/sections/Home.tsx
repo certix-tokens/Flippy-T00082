@@ -27,7 +27,7 @@ const container = {
 
 function Home() {
   return (
-    <div className="relative z-0 h-auto md:h-[86.5vh] overflow-y-hidden overflow-x-hidden">
+    <div className="relative z-0 h-auto 2xl:h-[86.5vh]  overflow-y-hidden overflow-x-hidden">
       {/* 🎭 Realistic Stage Curtains */}
       <motion.div
         className="absolute top-0 left-0 w-1/2 h-full z-[50]"
@@ -105,7 +105,7 @@ function Home() {
           <path id="curve" d="M 100 300 Q 600 0 1100 300" fill="transparent" />
           <motion.text
             fill="white"
-            className="font-jacks md:text-[150px] text-[50px]"
+            className="font-jacks md:text-[100px] 2xl:text-[150px] text-[50px]"
              textAnchor="middle"
             dominantBaseline="middle"
             initial={{ opacity: 0, letterSpacing: '-0.05em', y: 30 }}
@@ -125,11 +125,11 @@ function Home() {
           transition={{ delay: 0.5, duration: 1 }}
         
         >
-          <div className="rounded-2xl xl:-mt-60 -mt-10 md:w-[1000px] w-[345px] h-40 sm:h-auto bg-[#9318182B]/17 p-6 backdrop-blur-sm xl:h-50">
-            <p className="hidden md:block font-jel mb-[20px] px-4 text-[11px] md:text-[20px] font-medium text-white">
+          <div className="rounded-2xl xl:-mt-50 2xl:-mt-50 -mt-10 md:w-[800px] 2xl:w-[1000px] w-[345px] h-40 2xl:h-auto bg-[#9318182B]/17 p-6 backdrop-blur-sm xl:h-40">
+            <p className="hidden md:block font-jel mb-[20px] px-4 text-[11px] md:text-[14px] 2xl:text-[20px] font-medium text-white">
               Welcome to Flippy!
             </p>
-            <p className="hidden md:block font-jel px-4 text-[11px] md:text-[20px] leading-8 font-medium text-white">
+            <p className="hidden md:block font-jel px-4 text-[11px] md:text-[12px] 2xl:text-[20px] leading-8 font-medium text-white">
               Step into the spotlight of penguin-inspired tokens. Join Flippy
               and take center stage in the world of crypto, where excitement
               meets creativity! Waddle your way to exclusive rewards, connect
@@ -147,9 +147,9 @@ function Home() {
         </motion.div>
 
         {/* Buttons Section */}
-        <motion.div className="mt-6 xl:-mt-5 gap-[89px] hidden md:flex">
+        <motion.div className="mt-6 2xl:mt-2 xl:-mt-5 gap-[89px] hidden md:flex">
           <motion.button
-            className="h-[66px] w-[173px] rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B]  via-[#9B282F]  to-[#B13940] text-white font-jel text-[24px]"
+            className="md:h-[60px] md:w-[150px]   2xl:h-[66px] 2xl:w-[173px] rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B]  via-[#9B282F]  to-[#B13940] text-white font-jel text-[24px]"
              whileHover={{ scale: 1.05, y: -2, boxShadow: '0px 10px 25px rgba(0,0,0,0.25)' }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 200, damping: 12 }}
@@ -158,7 +158,7 @@ function Home() {
             Join Now
           </motion.button>
           <motion.button
-            className="h-[66px] w-[173px] rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B] via-[#9B282F] to-[#B13940] text-white font-jel text-[24px]"
+            className=" md:h-[60px] md:w-[150px]  2xl:h-[66px] 2xl:w-[173px] rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B] via-[#9B282F] to-[#B13940] text-white font-jel text-[24px]"
            whileHover={{ scale: 1.05, y: -2, boxShadow: '0px 10px 25px rgba(0,0,0,0.25)' }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 200, damping: 12 }}
