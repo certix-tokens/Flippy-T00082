@@ -38,32 +38,32 @@ function Roadmap() {
   const desktopConfigs = [
     // Stage 1
     {
-      boxClasses: "sm:top-[60%] sm:left-10 md:top-[51%] md:left-1 lg:top-[50%] lg:left-2 xl:top-[45%] 2xl:top-[32%] 2xl:left-20 z-0",
-      imageClasses: "z-90 sm:top-[55%] sm:left-10 sm:w-[100px] md:top-[62%] md:left-5 md:w-[150px] lg:top-[59%] lg:w-[170px] xl:top-[50%] xl:left-5 xl:w-[222px] 2xl:top-[50%] 2xl:left-30",
+      boxClasses: "sm:top-[60%] sm:left-10 md:top-[51%] md:left-1 lg:top-[50%] lg:left-2 xl:top-[45%] 2xl:top-[14%] 2xl:left-20 z-0",
+      imageClasses: "z-90 sm:top-[55%] sm:left-10 sm:w-[100px] md:top-[62%] md:left-5 md:w-[150px] lg:top-[59%] lg:w-[170px] xl:top-[50%] xl:left-5 xl:w-[222px] 2xl:top-[30%] 2xl:left-30",
       animation: { x: '-100vw', opacity: 0 }
     },
     // Stage 2
     {
-      boxClasses: "sm:top-[50%] sm:left-30 md:top-[48%] md:left-10 lg:top-[45%] lg:left-3 xl:top-[42%] xl:left-10 2xl:top-[22%] 2xl:left-20 z-0",
-      imageClasses: "z-90 sm:top-[50%] sm:left-2 sm:w-[100px] md:top-[45%] md:left-10 md:w-[150px] lg:left-10 lg:top-[45%] lg:w-[170px] xl:top-[40%] xl:left-10 xl:w-[222px] 2xl:top-[40%] 2xl:left-20",
+      boxClasses: "sm:top-[50%] sm:left-30 md:top-[48%] md:left-10 lg:top-[45%] lg:left-3 xl:top-[42%] xl:left-10 2xl:top-[14%] 2xl:left-20 z-0",
+      imageClasses: "z-90 sm:top-[50%] sm:left-2 sm:w-[100px] md:top-[45%] md:left-10 md:w-[150px] lg:left-10 lg:top-[45%] lg:w-[170px] xl:top-[40%] xl:left-10 xl:w-[222px] 2xl:top-[20%] 2xl:left-20",
       animation: { x: "-100vw", y: "100vh", opacity: 0 }
     },
     // Stage 3
     {
-      boxClasses: "z-0 sm:top-[70%] sm:left-10 md:top-[49%] md:left-10 lg:top-[45%] lg:left-6 xl:top-[42%] xl:left-20 2xl:top-[30%] 2xl:left-20",
-      imageClasses: "z-90 sm:top-[52%] sm:left-1 sm:w-[100px] md:top-[46%] md:left-10 md:w-[150px] lg:top-[47%] lg:left-16 lg:w-[170px] xl:top-[43%] xl:left-20 xl:w-[222px] 2xl:top-[40%] 2xl:left-20",
+      boxClasses: "z-0 sm:top-[70%] sm:left-10 md:top-[49%] md:left-10 lg:top-[45%] lg:left-6 xl:top-[42%] xl:left-20 2xl:top-[12%] 2xl:left-20",
+      imageClasses: "z-90 sm:top-[52%] sm:left-1 sm:w-[100px] md:top-[46%] md:left-10 md:w-[150px] lg:top-[47%] lg:left-16 lg:w-[170px] xl:top-[43%] xl:left-20 xl:w-[222px] 2xl:top-[24%] 2xl:left-20",
       animation: { y: '100vw', opacity: 0 }
     },
     // Stage 4
     {
-      boxClasses: "z-0 sm:top-[52%] sm:right-30 md:top-[51%] md:-right-12 lg:-right-18 lg:top-[48%] xl:top-[44%] xl:-right-20 2xl:top-[28%] 2xl:right-10",
-      imageClasses: "z-90 sm:top-[54%] sm:right-5 sm:w-[100px] md:top-[49%] md:-right-12 md:w-[150px] lg:top-[49%] lg:-right-10 lg:w-[170px] xl:top-[46%] xl:-right-20 xl:w-[222px] 2xl:top-[45%] 2xl:right-10",
+      boxClasses: "z-0 sm:top-[52%] sm:right-30 md:top-[51%] md:-right-12 lg:-right-18 lg:top-[48%] xl:top-[44%] xl:-right-20 2xl:top-[11%] 2xl:right-10",
+      imageClasses: "z-90 sm:top-[54%] sm:right-5 sm:w-[100px] md:top-[49%] md:-right-12 md:w-[150px] lg:top-[49%] lg:-right-10 lg:w-[170px] xl:top-[46%] xl:-right-20 xl:w-[222px] 2xl:top-[25%] 2xl:right-10",
       animation: { x: "100vw", y: "100vh", opacity: 0 }
     },
     // Stage 5
     {
-      boxClasses: "sm:top-[60%] sm:right-10 md:top-[56%] md:right-5 lg:top-[53%] xl:top-[55%] xl:right-5 2xl:top-[39%] 2xl:right-25 z-0",
-      imageClasses: " z-90 sm:top-[58%] sm:right-10 sm:w-[100px] md:top-[65%] md:right-5 md:w-[150px] lg:top-[62%] lg:w-[170px] xl:top-[54%] xl:right-5 xl:w-[222px] 2xl:top-[55%] 2xl:right-30",
+      boxClasses: "sm:top-[60%] sm:right-10 md:top-[56%] md:right-5 lg:top-[53%] xl:top-[55%] xl:right-5 2xl:top-[18%] 2xl:right-25 z-0",
+      imageClasses: " z-90 sm:top-[58%] sm:right-10 sm:w-[100px] md:top-[65%] md:right-5 md:w-[150px] lg:top-[62%] lg:w-[170px] xl:top-[54%] xl:right-5 xl:w-[222px] 2xl:top-[35%] 2xl:right-30",
       animation: { x: '100vw', opacity: 0 }
     }
   ];
@@ -71,7 +71,7 @@ function Roadmap() {
   return (
     <div className="relative h-auto w-full overflow-hidden">
       <motion.div
-        className="relative inset-0 w-full bg-cover bg-[position:60%_center]  md:bg-center overflow-hidden "
+        className="relative inset-0  2xl:h-[86.5vh]  w-full bg-cover bg-[position:60%_center]  md:bg-center overflow-hidden "
         style={{ backgroundImage: `url(${Roadmapbg})` }}
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -154,11 +154,11 @@ function Roadmap() {
                   className={`absolute h-auto transition-all duration-300 cursor-pointer hover:scale-110 ${
                     config.imageClasses
                   } ${
-                    index === 0 ? 'md:group-hover:top-[65%] lg:group-hover:top-[62%] xl:group-hover:top-[55%] 2xl:group-hover:top-[52%]' :
-                    index === 1 ? 'md:group-hover:top-[62%] lg:group-hover:top-[57%] xl:group-hover:top-[50%] 2xl:group-hover:top-[42%]' :
-                    index === 2 ? 'md:group-hover:top-[64%] lg:group-hover:top-[59%] xl:group-hover:top-[52%] 2xl:group-hover:top-[46%]' :
-                    index === 3 ? 'md:group-hover:top-[66%] lg:group-hover:top-[61%] xl:group-hover:top-[55%] 2xl:group-hover:top-[47%]' :
-                    'md:group-hover:top-[70%] lg:group-hover:top-[65%] 2xl:group-hover:top-[59%]'
+                    index === 0 ? 'md:group-hover:top-[65%] lg:group-hover:top-[62%] xl:group-hover:top-[55%] 2xl:group-hover:top-[32%]' :
+                    index === 1 ? 'md:group-hover:top-[62%] lg:group-hover:top-[57%] xl:group-hover:top-[50%] 2xl:group-hover:top-[32%]' :
+                    index === 2 ? 'md:group-hover:top-[64%] lg:group-hover:top-[59%] xl:group-hover:top-[52%] 2xl:group-hover:top-[32%]' :
+                    index === 3 ? 'md:group-hover:top-[66%] lg:group-hover:top-[61%] xl:group-hover:top-[55%] 2xl:group-hover:top-[32%]' :
+                    'md:group-hover:top-[70%] lg:group-hover:top-[65%] 2xl:group-hover:top-[38%]'
                   }`}
                   initial={config.animation}
                   animate={{ x: 0, y: 0, opacity: 1 }}
