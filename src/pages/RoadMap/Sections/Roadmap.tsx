@@ -13,13 +13,11 @@ function Roadmap() {
 
   const pengs = [gif1, gif2, gif3, gif4, gif5];
 
-  // prevent horizontal scroll glitch on mobile (explicit cleanup to satisfy TS/ESLint)
+  // prevent horizontal scroll bar on mobile
   useEffect(() => {
     const prev = document.body.style.overflowX;
     document.body.style.overflowX = 'hidden';
-    return () => {
-      document.body.style.overflowX = prev;
-    };
+    return () => { document.body.style.overflowX = prev; };
   }, []);
 
   // ---- Penguin Positions (desktop+) ----
@@ -49,63 +47,54 @@ function Roadmap() {
     'h-[90px]  sm:h-[120px] md:h-[160px] xl:h-[200px] 2xl:h-[240px]',
   ];
 
-  // ====== SHOWTIME (smooth sequencing) ======
+  // ====== SHOWTIME (entrance + post-show loop) ======
   const [lightsDim, setLightsDim] = useState(0.88); // start dark
   const [entered, setEntered] = useState<boolean[]>(Array(pengs.length).fill(false));
   const [highlight, setHighlight] = useState<number | null>(null);
+  const [showLoopLights, setShowLoopLights] = useState(false); // music-stage lights after entrance
 
   useEffect(() => {
     const ENTER_DELAY = 700;   // gap between penguins
-    const ENTER_DUR = 950;     // penguin enter duration
+    const ENTER_DUR = 950;     // penguin enter animation duration
     const SPOTLIGHT_MS = 1000; // spotlight linger
-    const START_DELAY = 400;   // small breath before starting
-
-    // expose durations to CSS via root vars
+    const START_DELAY = 400;   // pause before first penguin
     document.documentElement.style.setProperty('--enter-dur', `${ENTER_DUR}ms`);
     document.documentElement.style.setProperty('--spotlight-dur', `${SPOTLIGHT_MS}ms`);
 
     const timers: number[] = [];
-
-    // initial gentle lighten
     timers.push(window.setTimeout(() => setLightsDim(0.82), START_DELAY));
 
     pengs.forEach((_, i) => {
       const t = START_DELAY + 300 + i * ENTER_DELAY;
       timers.push(
         window.setTimeout(() => {
-          // mark penguin as entered
-          setEntered((prev) => {
-            const copy = [...prev];
-            copy[i] = true;
-            return copy;
-          });
-          // spotlight burst
+          setEntered((prev) => { const c = [...prev]; c[i] = true; return c; });
           setHighlight(i);
-          window.setTimeout(() => {
-            setHighlight((p) => (p === i ? null : p));
-          }, SPOTLIGHT_MS);
-
-          // background lights progressively brighten
+          window.setTimeout(() => setHighlight((p) => (p === i ? null : p)), SPOTLIGHT_MS);
           const target = Math.max(0.18, 0.88 - (i + 1) * 0.14);
           setLightsDim((prev) => (prev > target ? target : prev));
         }, t)
       );
     });
 
-    // final lights up with a soft tail
+    // when entrance done -> lights up + start loop lights
     const endAt = START_DELAY + 300 + (pengs.length - 1) * ENTER_DELAY + ENTER_DUR + 400;
-    timers.push(window.setTimeout(() => setLightsDim(0), endAt + 900));
+    timers.push(
+      window.setTimeout(() => {
+        setLightsDim(0);
+        setShowLoopLights(true);
+      }, endAt + 900)
+    );
 
-    return () => {
-      timers.forEach((id) => clearTimeout(id));
-    };
+    return () => { timers.forEach(clearTimeout); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
-      {/* local keyframes */}
+      {/* keyframes for entrance + stage lights */}
       <style>{`
+        /* entrance */
         @keyframes pengEnter {
           0%   { opacity: 0; transform: translateY(32px) scale(0.985); }
           40%  { opacity: 1; transform: translateY(6px)  scale(1.005); }
@@ -115,7 +104,6 @@ function Roadmap() {
         .animate-peng-enter {
           animation: pengEnter var(--enter-dur, 950ms) cubic-bezier(.22,.68,.2,1) both;
         }
-
         @keyframes spotlightPop {
           0%   { opacity: 0; transform: scale(0.9); }
           45%  { opacity: .6; transform: scale(1.04); }
@@ -124,19 +112,63 @@ function Roadmap() {
         .animate-spotlight {
           animation: spotlightPop var(--spotlight-dur, 1000ms) ease-out forwards;
         }
+
+        /* === post-show music stage === */
+
+        /* sweeping beams: swing gently L<->R and pulse */
+        @keyframes sweepYaw {
+          0%   { transform: rotate(-18deg); }
+          50%  { transform: rotate( 18deg); }
+          100% { transform: rotate(-18deg); }
+        }
+        @keyframes beamPulse {
+          0%,100% { opacity: .25; }
+          50%     { opacity: .55; }
+        }
+
+        /* color wash across scene (very subtle) */
+        @keyframes washHue {
+          0%   { filter: hue-rotate(0deg)    saturate(1.0) brightness(1.0); }
+          50%  { filter: hue-rotate(24deg)   saturate(1.05) brightness(1.02); }
+          100% { filter: hue-rotate(0deg)    saturate(1.0) brightness(1.0); }
+        }
+
+        /* shimmer on the stage glow band */
+        @keyframes glowBreathe {
+          0%,100% { opacity: .55; }
+          50%     { opacity: .85; }
+        }
+
+        /* tiny idle bob for penguins */
+        @keyframes bob {
+          0%,100% { transform: translateY(0); }
+          50%     { transform: translateY(-3px); }
+        }
+        .animate-bob {
+          animation: bob 2600ms ease-in-out infinite;
+        }
       `}</style>
 
-      {/* wrapper: mobile-safe height + scroll; kill horizontal overflow */}
+      {/* wrapper */}
       <div className="relative min-h-[100svh] md:h-[100vh] w-full overflow-x-hidden overflow-y-auto">
-        {/* background with global dim overlay */}
+        {/* background */}
         <div
           className="relative inset-0 min-h-[100svh] md:h-[100vh] w-full bg-cover bg-center"
           style={{ backgroundImage: `url(${Roadmapbg})` }}
         >
+          {/* global dim overlay during entrance */}
           <div
             className="pointer-events-none absolute inset-0 z-[1] bg-black transition-opacity duration-[900ms] ease-[cubic-bezier(.22,.68,.2,1)]"
             style={{ opacity: lightsDim }}
           />
+
+          {/* subtle post-show color wash (desktop only) */}
+          {showLoopLights && (
+            <div className="hidden sm:block pointer-events-none absolute inset-0 z-[1] animate-[washHue_10s_ease-in-out_infinite]">
+              {/* faint gradient overlay; mix as screen to tint highlights only */}
+              <div className="absolute inset-0 bg-gradient-to-b from-fuchsia-500/0 via-cyan-400/5 to-amber-300/10 mix-blend-screen" />
+            </div>
+          )}
 
           {/* Title */}
           <div className="relative z-[2] pt-[90px] text-center md:pt-[100px]">
@@ -170,12 +202,46 @@ function Roadmap() {
 
           {/* ---------- DESKTOP SHOWTIME ---------- */}
           <div className="hidden sm:block">
-            {/* subtle stage glow responding to lights */}
+            {/* stage glow band */}
             <div
-              className={`pointer-events-none absolute inset-x-[10%] bottom-[10%] z-[2] h-12 rounded-full blur-2xl transition-opacity duration-[900ms] ease-[cubic-bezier(.22,.68,.2,1)] ${
-                lightsDim > 0.3 ? 'opacity-40' : 'opacity-75'
-              } bg-amber-200/35`}
+              className={`pointer-events-none absolute inset-x-[10%] bottom-[10%] z-[2] h-12 rounded-full blur-2xl bg-amber-200/35 ${
+                showLoopLights ? 'animate-[glowBreathe_5s_ease-in-out_infinite]' : 'opacity-70'
+              }`}
             />
+
+            {/* post-show moving rigs (beams) */}
+            {showLoopLights && (
+              <div className="pointer-events-none absolute left-1/2 top-[10%] z-[2] w-[1200px] max-w-[92%] -translate-x-1/2">
+                <div className="relative mx-auto grid max-w-[980px] grid-cols-6 gap-3">
+                  {/* 4 beams with different timings/directions */}
+                  {[0, 1, 2, 3].map((b) => (
+                    <div key={b} className="relative h-10 w-10 place-self-center">
+                      {/* head */}
+                      <div className="absolute inset-0 rounded-full bg-neutral-300/60 shadow-[0_0_20px_6px_rgba(255,255,255,0.2)]" />
+                      {/* beam */}
+                      <div
+                        className={`
+                          absolute left-1/2 top-full h-[30vh] w-[24vw] -translate-x-1/2 origin-top
+                          bg-gradient-to-b from-white/35 via-white/10 to-transparent
+                          blur-[1px] mix-blend-screen
+                          ${b % 2 ? 'animate-[sweepYaw_8s_ease-in-out_infinite]' : 'animate-[sweepYaw_10s_ease-in-out_infinite]'}
+                        `}
+                        style={{
+                          animationDirection: b % 2 ? 'alternate' as const : 'alternate-reverse' as const,
+                          animationDelay: `${b * 0.6}s`,
+                          opacity: 0.35,
+                        }}
+                      />
+                      {/* beam pulse */}
+                      <div
+                        className="absolute left-1/2 top-full h-[24vh] w-[18vw] -translate-x-1/2 origin-top bg-gradient-to-b from-white/30 via-white/8 to-transparent mix-blend-screen animate-[beamPulse_6s_ease-in-out_infinite]"
+                        style={{ animationDelay: `${b * 0.8}s` }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* penguins layer */}
             <div className="absolute inset-0 z-[3]">
@@ -187,13 +253,12 @@ function Roadmap() {
                   }`}
                   onClick={() => toggleOpacity(i)}
                 >
-                  {/* spotlight burst */}
+                  {/* landing spotlight */}
                   <div
                     className={`pointer-events-none absolute -bottom-2 left-1/2 h-12 w-28 -translate-x-1/2 rounded-full bg-amber-100/40 blur-md ${
                       highlight === i ? 'animate-spotlight' : 'opacity-0'
                     }`}
                   />
-
                   {/* tooltip */}
                   <div
                     className={`absolute ${tipPos[i]} w-[160px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-3 py-3 text-white shadow-xl transition-opacity duration-400 ease-[cubic-bezier(.22,.68,.2,1)] md:w-[200px] xl:w-[240px] ${
@@ -205,13 +270,13 @@ function Roadmap() {
                       This is a short explanation. make it short and clear to keep students
                     </p>
                   </div>
-
-                  {/* penguin image */}
+                  {/* penguin (idle bob once show lights start) */}
                   <img
                     src={src}
                     alt={`Penguin ${i + 1}`}
-                    className={`${pengSize[i]} w-auto select-none object-contain drop-shadow-[0_18px_24px_rgba(0,0,0,0.45)] transition-transform duration-400 ease-[cubic-bezier(.22,.68,.2,1)] group-hover:-translate-y-1`}
+                    className={`${pengSize[i]} w-auto select-none object-contain drop-shadow-[0_18px_24px_rgba(0,0,0,0.45)] transition-transform duration-400 ease-[cubic-bezier(.22,.68,.2,1)] group-hover:-translate-y-1 ${showLoopLights ? 'animate-bob' : ''}`}
                     draggable={false}
+                    style={{ animationDelay: showLoopLights ? `${i * 0.2}s` : undefined }}
                   />
                 </div>
               ))}
