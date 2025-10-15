@@ -27,10 +27,10 @@ const container = {
 
 function Home() {
   return (
-    <div className="relative z-0 h-auto 2xl:h-[86.5vh]  overflow-y-hidden overflow-x-hidden">
+    <div className="relative z-0 h-[100vh] overflow-x-hidden overflow-y-hidden">
       {/* 🎭 Realistic Stage Curtains */}
       <motion.div
-        className="absolute top-0 left-0 w-1/2 h-full z-[50]"
+        className="absolute top-0 left-0 z-[50] h-full w-1/2"
         style={{
           background: `
             repeating-linear-gradient(
@@ -56,7 +56,7 @@ function Home() {
         }}
       />
       <motion.div
-        className="absolute top-0 right-0 w-1/2 h-full z-[50]"
+        className="absolute top-0 right-0 z-[50] h-full w-1/2"
         style={{
           background: `
             repeating-linear-gradient(
@@ -84,7 +84,7 @@ function Home() {
 
       {/* Background Layer */}
       <motion.div
-        className="absolute inset-0 scale-x-[-1] bg-cover bg-[position:56%_center] md:bg-center"
+        className="absolute inset-0 md:h-screen w-screen scale-x-[-1] bg-cover bg-[position:56%_center] md:bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
         initial={{ scale: 1.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -100,13 +100,13 @@ function Home() {
       >
         <motion.svg
           viewBox="0 0 1200 400"
-          className="absolute -top-16 left-1/2 -translate-x-1/2 w-[1200px] h-[400px]"
+          className="absolute md:top-[2%] -top-[0%] left-1/2 h-[400px] w-[1200px] -translate-x-1/2"
         >
           <path id="curve" d="M 100 300 Q 600 0 1100 300" fill="transparent" />
           <motion.text
             fill="white"
-            className="font-jacks md:text-[100px] 2xl:text-[150px] text-[50px]"
-             textAnchor="middle"
+            className="font-jacks text-[50px] md:text-[100px] 2xl:text-[140px]"
+            textAnchor="middle"
             dominantBaseline="middle"
             initial={{ opacity: 0, letterSpacing: '-0.05em', y: 30 }}
             animate={{ opacity: 1, letterSpacing: '0em', y: 0 }}
@@ -118,74 +118,86 @@ function Home() {
           </motion.text>
         </motion.svg>
 
-        {/* Text Section */}
-        <motion.div className="md:mt-[470px] mt-[604px] flex md:w-full w-[500px] justify-center px-2"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 1 }}
-        
-        >
-          <div className="rounded-2xl xl:-mt-50 2xl:-mt-50 -mt-10 md:w-[800px] 2xl:w-[1000px] w-[345px] h-40 2xl:h-auto bg-[#9318182B]/17 p-6 backdrop-blur-sm xl:h-40">
-            <p className="hidden md:block font-jel mb-[20px] px-4 text-[11px] md:text-[14px] 2xl:text-[20px] font-medium text-white">
-              Welcome to Flippy!
-            </p>
-            <p className="hidden md:block font-jel px-4 text-[11px] md:text-[12px] 2xl:text-[20px] leading-8 font-medium text-white">
-              Step into the spotlight of penguin-inspired tokens. Join Flippy
-              and take center stage in the world of crypto, where excitement
-              meets creativity! Waddle your way to exclusive rewards, connect
-              with a vibrant community, and shine with every performance.
-            </p>
-            <p className="text-[11px] text-white font-jel md:hidden">
-              This is a short explanation. Flippy is a fun and interactive
-              platform. Keep it short, clear, and engaging to capture attention.
-              Flippy is a fun and interactive platform. Keep it short, clear,
-              and engaging to capture attention. This is a short explanation.
-              Make it short and clear to keep students attentive. This is a
-              short explanation.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Buttons Section */}
-        <motion.div className="mt-6 2xl:mt-2 xl:-mt-5 gap-[89px] hidden md:flex">
-          <motion.button
-            className="md:h-[60px] md:w-[150px]   2xl:h-[66px] 2xl:w-[173px] rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B]  via-[#9B282F]  to-[#B13940] text-white font-jel text-[24px]"
-             whileHover={{ scale: 1.05, y: -2, boxShadow: '0px 10px 25px rgba(0,0,0,0.25)' }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 12 }}
-            
+        <div className='absolute bottom-[10%] 2xl:bottom-[10%]'>
+          <motion.div
+            className="mt-[604px] flex w-[500px] justify-center px-2 md:mt-[470px] md:w-full"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 1 }}
           >
-            Join Now
-          </motion.button>
-          <motion.button
-            className=" md:h-[60px] md:w-[150px]  2xl:h-[66px] 2xl:w-[173px] rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B] via-[#9B282F] to-[#B13940] text-white font-jel text-[24px]"
-           whileHover={{ scale: 1.05, y: -2, boxShadow: '0px 10px 25px rgba(0,0,0,0.25)' }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 12 }}
-          >
-            Buy Now
-          </motion.button>
-        </motion.div>
+            <div className="h-40 w-[345px] rounded-2xl bg-[#9318182B]/17 p-6 backdrop-blur-sm md:w-[800px] xl:-mt-50 xl:h-40 2xl:-mt-50 2xl:h-auto 2xl:w-[1000px]">
+              <p className="font-jel mb-[20px] hidden px-4 text-[11px] font-medium text-white md:block md:text-[14px] 2xl:text-[20px]">
+                Welcome to Flippy!
+              </p>
+              <p className="font-jel hidden px-4 text-[11px] leading-8 font-medium text-white md:block md:text-[12px] 2xl:text-[20px]">
+                Step into the spotlight of penguin-inspired tokens. Join Flippy
+                and take center stage in the world of crypto, where excitement
+                meets creativity! Waddle your way to exclusive rewards, connect
+                with a vibrant community, and shine with every performance.
+              </p>
+              <p className="font-jel text-[11px] text-white md:hidden">
+                This is a short explanation. Flippy is a fun and interactive
+                platform. Keep it short, clear, and engaging to capture
+                attention. Flippy is a fun and interactive platform. Keep it
+                short, clear, and engaging to capture attention. This is a short
+                explanation. Make it short and clear to keep students attentive.
+                This is a short explanation.
+              </p>
+            </div>
+          </motion.div>
 
-        {/* Social Icons */}
-        <motion.div
-          className="grid grid-cols-4 gap-[36px] xl:-mt-5"
-          variants={container}
-        >
-          {items.map((item, i) => (
-            <motion.div key={i} className="flex items-center justify-center">
-              <motion.img
-                src={item.path}
-                alt={item.alt ?? ''}
-                className="mt-[36px] h-[40px] w-[40px] mb-4 md:mb-0"
-               animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 3 + i * 0.25, repeat: Infinity, ease: 'easeInOut' }}
-                whileHover={{ scale: 1.15, rotate: 2 }}
-                whileTap={{ scale: 0.95 }}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
+          {/* Buttons Section */}
+          <motion.div className="mt-6 hidden gap-[50px] justify-center md:flex xl:-mt-5 2xl:mt-2">
+            <motion.button
+              className="font-jel rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B] via-[#9B282F] to-[#B13940] text-[24px] text-white md:h-[60px] md:w-[150px] 2xl:h-[66px] 2xl:w-[173px]"
+              whileHover={{
+                scale: 1.05,
+                y: -2,
+                boxShadow: '0px 10px 25px rgba(0,0,0,0.25)',
+              }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+            >
+              Join Now
+            </motion.button>
+            <motion.button
+              className="font-jel rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B] via-[#9B282F] to-[#B13940] text-[24px] text-white md:h-[60px] md:w-[150px] 2xl:h-[66px] 2xl:w-[173px]"
+              whileHover={{
+                scale: 1.05,
+                y: -2,
+                boxShadow: '0px 10px 25px rgba(0,0,0,0.25)',
+              }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+            >
+              Buy Now
+            </motion.button>
+          </motion.div>
+
+          {/* Social Icons */}
+          <motion.div
+            className="flex gap-14 justify-center"
+            variants={container}
+          >
+            {items.map((item, i) => (
+              <motion.div key={i} className="flex items-center justify-center">
+                <motion.img
+                  src={item.path}
+                  alt={item.alt ?? ''}
+                  className="mt-[36px] mb-4 h-[30px] w-[30px] md:h-[40px] md:w-[40px] md:mb-0"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{
+                    duration: 3 + i * 0.25,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                  whileHover={{ scale: 1.15, rotate: 2 }}
+                  whileTap={{ scale: 0.95 }}
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </motion.div>
     </div>
   );

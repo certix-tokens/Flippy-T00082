@@ -1,5 +1,5 @@
 import NavItem from './components/navbar/navItem';
-// import ScreenSizeIndicator from './components/ScreenSizeIndicator';
+import ScreenSizeIndicator from './components/ScreenSizeIndicator';
 import Home from './pages/Home/index'
 import Footer from './components/navbar/footer'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -12,10 +12,10 @@ function App() {
   return (
     <>
       <Router>
-        <div>
+        <div className=''>
           <NavItem />
 
-          <main className="pt-[72px] pb-[56px] min-h-[calc(100vh-128px)]">
+          <main className="">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about_us" element={<Contact />} />
@@ -26,7 +26,7 @@ function App() {
             </Routes>
           </main>
 
-          {/* <ScreenSizeIndicator /> */}
+          <ScreenSizeIndicator />
 
           <Footer />
         </div>

@@ -33,10 +33,10 @@ function Join() {
   const [isSpinning, setIsSpinning] = useState(false);
 
   return (
-    <div className="relative h-[86.5vh] overflow-hidden">
+    <div className="relative h-[100vh] overflow-hidden">
       {/* Background Layer */}
       <motion.div
-        className="relative inset-0 bg-cover bg-center overflow-hidden"
+        className="relative inset-0 overflow-hidden bg-cover bg-center"
         style={{ backgroundImage: `url(${Joinbg})` }}
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -47,7 +47,7 @@ function Join() {
           src={Joinimggif}
           alt="Join Animation"
           onClick={() => setIsSpinning(!isSpinning)}
-          className="absolute top-[50%] md:top-[50%] lg:top-[40%] 2xl:top-[45%] 2xl:right-70  xl:right-40 xl:top-[48%] md:right-0 right-20 w-[180px] sm:w-[200px] md:w-[230px] lg:w-[260px] xl:w-[200px] 2xl:w-[300px] cursor-pointer"
+          className="absolute right-20 bottom-[20%] md:bottom-[20%] lg:bottom-[20%] xl:bottom-[15%] 2xl:bottom-[10%] w-[180px] cursor-pointer sm:w-[200px] md:right-0 md:w-[230px] lg:w-[260px]  xl:right-40 xl:w-[200px]  2xl:right-70 2xl:w-[300px]"
           style={{ transformOrigin: 'center center', perspective: 1000 }}
           animate={{
             rotateY: isSpinning ? 360 : 0,
@@ -61,10 +61,10 @@ function Join() {
 
         {/* Foreground Content */}
         <div className="flex min-h-screen items-start justify-center px-4 sm:px-6 md:px-0">
-          <div className="absolute top-[10%] max-w-[300px] text-center sm:max-w-[500px] md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1000px] 2xl:max-w-[1592px]">
+          <div className="absolute top-[20%] xl:top-[20%] max-w-[300px] text-center sm:max-w-[500px] md:max-w-[600px] lg:max-w-[1000px] xl:max-w-[1000px] 2xl:max-w-[1592px]">
             {/* Heading */}
             <motion.h1
-              className="font-jack mx-auto text-4xl font-normal break-words text-white sm:text-[45px] md:text-[90px] 2xl:text-[150px]"
+              className="font-jack mx-auto text-4xl font-normal break-words text-white sm:text-[45px] md:text-[40px] 2xl:text-[150px]"
               variants={titleVariant}
               initial="hidden"
               animate="show"
@@ -74,7 +74,7 @@ function Join() {
 
             {/* Paragraph */}
             <motion.p
-              className="font-jel mx-auto mt-10 text-sm text-[10px] break-words text-white sm:mt-6 sm:text-left sm:text-[12px] md:text-lg lg:text-[15px] xl:text-[15px]"
+              className="font-jel mx-auto mt-10 text-sm text-[10px] break-words text-white sm:mt-6 sm:text-left sm:text-[12px] md:text-[8px] lg:text-[15px] xl:text-[15px]"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1 }}
@@ -98,8 +98,7 @@ function Join() {
                     whileHover={{
                       scale: 1.2,
                       rotate: 10,
-                      filter:
-                        'drop-shadow(0 0 8px rgba(255,255,255,0.7))',
+                      filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.7))',
                     }}
                     transition={{
                       type: 'spring',
