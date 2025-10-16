@@ -6,6 +6,7 @@ import gif2 from '../../../assets/Images/gif/1gif.gif';
 import gif3 from '../../../assets/Images/gif/5gif.gif';
 import gif4 from '../../../assets/Images/gif/3gif.gif';
 import gif5 from '../../../assets/Images/gif/4gif.gif';
+import Roadmapvideobg from '../../../assets/Images/roadmapbgv.mp4';
 
 function Roadmap() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -53,7 +54,6 @@ function Roadmap() {
     hidden: {},
     show: {
       transition: {
-        // gentler rhythm
         delayChildren: 0.18,
         staggerChildren: 0.12,
         when: 'beforeChildren',
@@ -101,12 +101,30 @@ function Roadmap() {
 
   return (
     <div className="relative min-h-[100svh] md:h-[100vh] w-full overflow-x-hidden overflow-y-auto">
+      {/* Wrapper keeps your original fallback image so if video fails you still see it */}
       <div
         className="relative inset-0 min-h-[100svh] md:h-[100vh] w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${Roadmapbg})` }}
       >
+        {/* 🎬 Video background (keeps same sizing as bg-cover/bg-center) */}
+        <video
+          className="
+            absolute inset-0 z-0 h-full w-full
+            object-cover object-center
+            pointer-events-none
+          "
+          src={Roadmapvideobg}
+          autoPlay
+          loop
+          muted
+          playsInline
+          // @ts-ignore (iOS Safari inline playback hint)
+          webkit-playsinline="true"
+          preload="auto"
+        />
+
         {/* Title (unchanged) */}
-        <div className="pt-[90px] text-center md:pt-[100px]">
+        <div className="pt-[90px] text-center md:pt-[100px] relative z-10">
           <h1 className="font-jack text-5xl font-normal text-white md:text-7xl xl:text-8xl 2xl:text-[90px]">
             ROAD MAP
           </h1>
@@ -114,7 +132,7 @@ function Roadmap() {
 
         {/* ---------- MOBILE (original pyramid 1-2-2) ---------- */}
         <motion.div
-          className="mt-10 grid grid-cols-1 gap-10 px-4 pb-24 sm:hidden"
+          className="mt-10 grid grid-cols-1 gap-10 px-4 pb-24 sm:hidden relative z-10"
           variants={parentVariants}
           initial="hidden"
           animate="show"
@@ -126,7 +144,6 @@ function Roadmap() {
               onClick={() => toggleOpacity(i)}
               variants={pengVariants[i]}
             >
-              {/* prevent images from pushing layout wide */}
               <img
                 src={src}
                 alt={`Road map stage ${i + 1}`}
@@ -150,7 +167,7 @@ function Roadmap() {
         {/* ---------- DESKTOP (positions/sizes/tooltips) ---------- */}
         <div className="hidden sm:block">
           <motion.div
-            className="absolute inset-0"
+            className="absolute inset-0 z-10"
             variants={parentVariants}
             initial="hidden"
             animate="show"
@@ -160,9 +177,9 @@ function Roadmap() {
                 key={i}
                 className={`group absolute z-30 flex items-end justify-center -translate-x-1/2 will-change-transform ${pengPos[i]}`}
                 onClick={() => toggleOpacity(i)}
-                variants={pengVariants[i]} // unique motion per penguin
+                variants={pengVariants[i]}
               >
-                {/* Tooltip (unchanged behavior) */}
+                {/* Tooltip */}
                 <div
                   className={`absolute ${tipPos[i]} w-[160px] rounded-[11px] bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-3 py-3 text-white shadow-xl transition-opacity duration-300 md:w-[200px] xl:w-[240px] ${
                     activeIndex === i ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'
@@ -174,7 +191,7 @@ function Roadmap() {
                   </p>
                 </div>
 
-                {/* Penguin image (responsive size, unchanged classes) */}
+                {/* Penguin image */}
                 <img
                   src={src}
                   alt={`Penguin ${i + 1}`}
@@ -186,7 +203,7 @@ function Roadmap() {
           </motion.div>
 
           {/* subtle footlight glow (unchanged) */}
-          <div className="pointer-events-none absolute inset-x-[10%] bottom-[10%] h-12 rounded-full bg-amber-200/25 blur-2xl" />
+          <div className="pointer-events-none absolute inset-x-[10%] bottom-[10%] h-12 rounded-full bg-amber-200/25 blur-2xl z-10" />
         </div>
       </div>
     </div>
