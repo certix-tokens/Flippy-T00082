@@ -61,10 +61,10 @@ function Join() {
 
         {/* Foreground Content */}
         <div className="flex min-h-screen items-start justify-center px-4 sm:px-6 md:px-0">
-          <div className="absolute top-[10%] sm:top-[20%] xl:top-[20%] max-w-[300px] text-center sm:max-w-[500px] md:max-w-[600px] lg:max-w-[1000px] xl:max-w-[1000px] 2xl:max-w-[1592px]">
+          <div className="absolute top-[10%] sm:top-[20%] xl:top-[20%] max-w-[300px] text-center sm:max-w-[500px] md:max-w-[600px] lg:max-w-[1000px] xl:max-w-[1000px] 2xl:max-w-[1000px]">
             {/* Heading */}
             <motion.h1
-              className="font-jack mx-auto text-4xl font-normal break-words text-white sm:text-[45px] md:text-[40px] 2xl:text-[150px]"
+              className="font-jack mx-auto text-4xl font-normal break-words text-white sm:text-[45px] md:text-[40px] 2xl:text-[90px]"
               variants={titleVariant}
               initial="hidden"
               animate="show"
@@ -74,7 +74,7 @@ function Join() {
 
             {/* Paragraph */}
             <motion.p
-              className="font-jel mx-auto mt-10 text-sm text-[10px] break-words text-white sm:mt-6 sm:text-left sm:text-[12px] md:text-[8px] lg:text-[15px] xl:text-[15px]"
+              className="font-jel mx-auto mt-10 text-sm text-[10px] break-words text-white sm:mt-6 sm:text-left sm:text-[12px] md:text-[8px] lg:text-[15px] xl:text-[12px]"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1 }}

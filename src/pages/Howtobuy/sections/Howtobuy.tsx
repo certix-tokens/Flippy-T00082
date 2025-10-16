@@ -32,7 +32,7 @@ function HowToBuy() {
         transition={{ duration: 1.2, ease: 'easeOut' }}
     >
       <div className="absolute w-full top-30 text-center">
-        <motion.h1 className="font-jack text-[40px] font-normal text-white sm:text-[90px]  2xl:text-[150px]"
+        <motion.h1 className="font-jack text-[40px] font-normal text-white sm:text-[90px]  2xl:text-[90px]"
 
         variants={titleVariant}
               initial="hidden"

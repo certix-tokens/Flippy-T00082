@@ -95,7 +95,7 @@ function Contact() {
           <div className="group absolute top-[10%] text-center">
             {/* Animated Title */}
             <motion.h1
-              className="font-jacks text-5xl font-normal text-white opacity-100 group-hover:opacity-0 md:text-[90px] 2xl:text-[150px]"
+              className="font-jacks text-5xl font-normal text-white opacity-100 group-hover:opacity-0 md:text-[90px] 2xl:text-[90px]"
               variants={titleVariant}
               initial="hidden"
               animate="show"
@@ -107,7 +107,7 @@ function Contact() {
 
           <div className="relative flex h-full w-full items-center justify-center">
             <motion.div
-              className="absolute md:bottom-[32%] xl:bottom-[32%] 2xl:bottom-[40%] left-1/2 hidden -translate-x-1/2 overflow-hidden rounded-3xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] text-center md:block md:w-[600px] lg:w-[800px] xl:w-[600px] 2xl:w-[1500px]"
+              className="absolute md:bottom-[32%] xl:bottom-[32%] 2xl:bottom-[41%] left-1/2 hidden -translate-x-1/2 overflow-hidden rounded-3xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] text-center md:block md:w-[600px] lg:w-[800px] xl:w-[600px] 2xl:w-[1200px]"
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{
                 opacity: isHovered ? 1 : 0,
@@ -132,7 +132,7 @@ function Contact() {
                 animate={{ opacity: isHovered ? 1 : 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <p className="font-jel mx-auto h-auto text-left text-[20px] text-white md:px-8 md:py-8 md:text-[8px] lg:text-[10px] xl:text-[10px] 2xl:px-20 2xl:py-20 2xl:text-[20px]">
+                <p className="font-jel mx-auto h-auto text-left text-[20px] text-white md:px-8 md:py-8 md:text-[8px] lg:text-[10px] xl:text-[10px] 2xl:px-20 2xl:py-20 2xl:text-[14px]">
                   This is a short explanation. Flippy is a fun and interactive
                   platform. Keep it short, clear, and engaging to capture
                   attention. Flippy is a fun and interactive platform. Keep it

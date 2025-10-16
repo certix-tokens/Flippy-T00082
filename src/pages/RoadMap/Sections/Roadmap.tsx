@@ -48,77 +48,56 @@ function Roadmap() {
     'h-[90px]  sm:h-[120px] md:h-[160px] xl:h-[200px] 2xl:h-[240px]',
   ];
 
-  // ---- Framer Motion: parent + 5 unique child variants ----
+  // ---- Framer Motion: parent + smoother children ----
   const parentVariants = {
     hidden: {},
     show: {
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.35, // one-by-one timing
+        // gentler rhythm
+        delayChildren: 0.18,
+        staggerChildren: 0.12,
+        when: 'beforeChildren',
       },
     },
+  } as const;
+
+  // unified spring for buttery motion
+  const SPRING = {
+    type: 'spring' as const,
+    stiffness: 90,
+    damping: 18,
+    mass: 0.6,
+    bounce: 0.12,
+    restDelta: 0.001,
   };
 
-const pengVariants = [
-  // 1️⃣ from left
-  {
-    hidden: { x: '-45vw', y: 0, scale: 0.9 },
-    show: {
-      x: 0,
-      y: 0,
-      scale: 1,
-      transition: { type: 'spring', stiffness: 70, damping: 16, delay: 0.0 },
+  const pengVariants = [
+    // 1️⃣ from left
+    {
+      hidden: { x: '-45vw', y: 0, scale: 0.9 },
+      show:   { x: 0, y: 0, scale: 1, transition: SPRING },
     },
-  },
-
-  // 2️⃣ from bottom-left corner (angled to top-right)
-  {
-    hidden: { x: '-20vw', y: '100vh', scale: 0.85, rotate: -5 },
-    show: {
-      x: 0,
-      y: 0,
-      scale: 1,
-      rotate: 0,
-      transition: { duration: 1.0, ease: 'easeOut', delay: 0.2 },
+    // 2️⃣ bottom-left → top-right (slight angle)
+    {
+      hidden: { x: '-20vw', y: '100vh', scale: 0.85, rotate: -5 },
+      show:   { x: 0, y: 0, scale: 1, rotate: 0, transition: SPRING },
     },
-  },
-
-  // 3️⃣ from straight bottom (center)
-  {
-    hidden: { y: '100vh', scale: 0.9 },
-    show: {
-      y: 0,
-      scale: 1,
-      transition: { duration: 1.1, ease: 'easeOut', delay: 0.3 },
+    // 3️⃣ straight bottom (center)
+    {
+      hidden: { y: '100vh', scale: 0.9 },
+      show:   { y: 0, scale: 1, transition: SPRING },
     },
-  },
-
-  // 4️⃣ from bottom-right corner (angled to top-left)
-  {
-    hidden: { x: '20vw', y: '100vh', scale: 0.85, rotate: 5 },
-    show: {
-      x: 0,
-      y: 0,
-      scale: 1,
-      rotate: 0,
-      transition: { duration: 1.0, ease: 'easeOut', delay: 0.2 },
+    // 4️⃣ bottom-right → top-left (slight angle)
+    {
+      hidden: { x: '20vw', y: '100vh', scale: 0.85, rotate: 5 },
+      show:   { x: 0, y: 0, scale: 1, rotate: 0, transition: SPRING },
     },
-  },
-
-  // 5️⃣ from right
-  {
-    hidden: { x: '45vw', y: 0, scale: 0.9 },
-    show: {
-      x: 0,
-      y: 0,
-      scale: 1,
-      transition: { type: 'spring', stiffness: 70, damping: 16, delay: 0.0 },
+    // 5️⃣ from right
+    {
+      hidden: { x: '45vw', y: 0, scale: 0.9 },
+      show:   { x: 0, y: 0, scale: 1, transition: SPRING },
     },
-  },
-] as const;
-
-
-
+  ] as const;
 
   return (
     <div className="relative min-h-[100svh] md:h-[100vh] w-full overflow-x-hidden overflow-y-auto">
@@ -128,7 +107,7 @@ const pengVariants = [
       >
         {/* Title (unchanged) */}
         <div className="pt-[90px] text-center md:pt-[100px]">
-          <h1 className="font-jack text-5xl font-normal text-white md:text-7xl xl:text-8xl">
+          <h1 className="font-jack text-5xl font-normal text-white md:text-7xl xl:text-8xl 2xl:text-[90px]">
             ROAD MAP
           </h1>
         </div>
@@ -143,7 +122,7 @@ const pengVariants = [
           {[gif1, gif2, gif3, gif4, gif5].map((src, i) => (
             <motion.div
               key={i}
-              className="group flex cursor-pointer items-start justify-center gap-4"
+              className="group flex cursor-pointer items-start justify-center gap-4 will-change-transform"
               onClick={() => toggleOpacity(i)}
               variants={pengVariants[i]}
             >
@@ -179,7 +158,7 @@ const pengVariants = [
             {pengs.map((src, i) => (
               <motion.div
                 key={i}
-                className={`group absolute z-30 flex items-end justify-center -translate-x-1/2 ${pengPos[i]}`}
+                className={`group absolute z-30 flex items-end justify-center -translate-x-1/2 will-change-transform ${pengPos[i]}`}
                 onClick={() => toggleOpacity(i)}
                 variants={pengVariants[i]} // unique motion per penguin
               >

@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import heroBg from '../../../assets/Images/herobg.webp';
 import Tele from '../../../assets/Images/tele.png';
 import X from '../../../assets/Images/twitter.png';
 import build from '../../../assets/Images/build.png';
 import Z from '../../../assets/Images/z.png';
+import Homes from '../../../assets/Images/home2.mp4'; // 🎥 video background
 
 type Item = {
   path: string;
@@ -82,22 +82,39 @@ function Home() {
         }}
       />
 
-      {/* Background Layer */}
-      <motion.div
-        className="absolute inset-0 md:h-screen w-screen scale-x-[-1] bg-cover bg-[position:56%_center] md:bg-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
+      {/* 🎥 Video Background Layer */}
+      <motion.video
+        className=" absolute inset-0 h-full w-full
+      object-cover
+      object-center               /* default for mobile */
+      md:object-[56%_center]      /* match your desktop focal point */
+      pointer-events-none
+       onLoadedMetadata={(e) => {
+    // ⏱ start at 5 seconds instead of 0
+    e.currentTarget.currentTime = 5;
+  }}
+    "
+        src={Homes}
+        autoPlay
+        loop
+        muted
+        playsInline
         initial={{ scale: 1.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.3, ease: 'easeOut', delay: 0.3 }}
       />
 
-      {/* Content Layer */}
+      {/* Optional Overlay for contrast */}
+      <div className="absolute inset-0 bg-black/30 z-[1]" />
+
+      {/* ✨ Content Layer */}
       <motion.div
         className="relative z-10 flex min-h-screen flex-col items-center justify-center"
         variants={container}
         initial="hidden"
         animate="show"
       >
+        {/* Title Path Animation */}
         <motion.svg
           viewBox="0 0 1200 400"
           className="absolute md:top-[2%] -top-[0%] left-1/2 h-[400px] w-[1200px] -translate-x-1/2"
@@ -118,7 +135,8 @@ function Home() {
           </motion.text>
         </motion.svg>
 
-        <div className='absolute bottom-[10%] 2xl:bottom-[10%]'>
+        {/* Description Box */}
+        <div className="absolute bottom-[10%] 2xl:bottom-[10%]">
           <motion.div
             className="mt-[604px] flex w-[500px] justify-center px-2 md:mt-[470px] md:w-full"
             initial={{ opacity: 0, y: 50 }}
@@ -138,15 +156,12 @@ function Home() {
               <p className="font-jel text-[11px] text-white md:hidden">
                 This is a short explanation. Flippy is a fun and interactive
                 platform. Keep it short, clear, and engaging to capture
-                attention. Flippy is a fun and interactive platform. Keep it
-                short, clear, and engaging to capture attention. This is a short
-                explanation. Make it short and clear to keep students attentive.
-                This is a short explanation.
+                attention.
               </p>
             </div>
           </motion.div>
 
-          {/* Buttons Section */}
+          {/* Buttons */}
           <motion.div className="mt-6 hidden gap-[50px] justify-center md:flex xl:-mt-5 2xl:mt-2">
             <motion.button
               className="font-jel rounded-[18px] border border-black bg-gradient-to-b from-[#4B181B] via-[#9B282F] to-[#B13940] text-[24px] text-white md:h-[60px] md:w-[150px] 2xl:h-[66px] 2xl:w-[173px]"
@@ -175,10 +190,7 @@ function Home() {
           </motion.div>
 
           {/* Social Icons */}
-          <motion.div
-            className="flex gap-14 justify-center"
-            variants={container}
-          >
+          <motion.div className="flex gap-14 justify-center" variants={container}>
             {items.map((item, i) => (
               <motion.div key={i} className="flex items-center justify-center">
                 <motion.img

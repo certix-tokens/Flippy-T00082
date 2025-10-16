@@ -32,7 +32,7 @@ function Token() {
       >
         <div className="mt-[100px] text-center">
           <motion.h1
-            className="font-jack text-[40px] font-normal text-white md:text-[90px] 2xl:text-[150px]"
+            className="font-jack text-[40px] font-normal text-white md:text-[90px] 2xl:text-[90px]"
             variants={titleVariant}
             initial="hidden"
             animate="show"
@@ -49,7 +49,7 @@ function Token() {
             onClick={() => toggleOpacity(0)}
           >
             <div
-              className={`-h-30 2xl:h-30  h-20 absolute bottom-70 left-8 rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-4 2xl:px-10 2xl:py-10 text-center text-white transition-opacity duration-300 sm:bottom-80 sm:left-22 md:bottom-84 md:left-30 md:opacity-0 md:group-hover:opacity-100 lg:bottom-90 lg:left-55 lg:text-[15px] xl:bottom-80 xl:left-40 xl:w-[200px] 2xl:bottom-120 2xl:left-85 ${activeIndex === 0 ? 'opacity-100' : 'opacity-0'}`}
+              className={`-h-30 2xl:h-30  h-20 absolute bottom-70 left-8 rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-4 2xl:px-10 2xl:py-10 text-center text-white transition-opacity duration-300 sm:bottom-80 sm:left-22 md:bottom-84 md:left-30 md:opacity-0 md:group-hover:opacity-100 lg:bottom-90 lg:left-55 lg:text-[15px] xl:bottom-80 xl:left-40 xl:w-[200px] 2xl:bottom-105 2xl:left-85 ${activeIndex === 0 ? 'opacity-100' : 'opacity-0'}`}
             >
               <p className="font-jel">0%</p>
               <p className="font-jel">Buy Tax</p>
@@ -58,7 +58,7 @@ function Token() {
               <motion.img
                 src={Toke1}
                 alt="Token 1"
-                className="absolute bottom-35 left-2 h-auto w-[150px] sm:bottom-35 sm:left-10 sm:w-[200px] md:bottom-30 md:left-10 md:w-[250px] md:group-hover:bottom-28 lg:bottom-30 lg:left-35 lg:group-hover:bottom-32 xl:bottom-23 xl:w-[250px] xl:group-hover:bottom-23 2xl:bottom-20 2xl:left-60 2xl:w-[447px]"
+                className="absolute bottom-35 left-2 h-auto w-[150px] sm:bottom-35 sm:left-10 sm:w-[200px] md:bottom-30 md:left-10 md:w-[250px] md:group-hover:bottom-28 lg:bottom-30 lg:left-35 lg:group-hover:bottom-32 xl:bottom-23 xl:w-[250px] xl:group-hover:bottom-23 2xl:bottom-20 2xl:left-60 2xl:w-[370px]"
                 initial={{ x: '-100vw', opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{
@@ -77,7 +77,7 @@ function Token() {
             onClick={() => toggleOpacity(1)}
           >
             <div
-              className={`absolute bottom-60 sm:h-20 2xl:h-30 md:20 rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-4  2xl:px-10 2xl:py-10 text-center text-white transition-opacity duration-300 sm:bottom-70 md:bottom-75 md:opacity-0 md:group-hover:opacity-100 lg:bottom-75 xl:bottom-73 xl:w-[200px] 2xl:bottom-110 ${activeIndex === 1 ? 'opacity-100' : 'opacity-0'} `}
+              className={`absolute bottom-60 sm:h-20 2xl:h-30 md:20 rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-4  2xl:px-10 2xl:py-10 text-center text-white transition-opacity duration-300 sm:bottom-70 md:bottom-75 md:opacity-0 md:group-hover:opacity-100 lg:bottom-75 xl:bottom-73 xl:w-[200px] 2xl:bottom-95 ${activeIndex === 1 ? 'opacity-100' : 'opacity-0'} `}
             >
               <p className="font-jel">0%</p>
               <p className="font-jel">Sell Tax</p>
@@ -86,7 +86,7 @@ function Token() {
               <motion.img
                 src={Toke2}
                 alt="Token 2"
-                className="absolute bottom-30  h-auto w-[150px] sm:bottom-30  sm:w-[200px] md:bottom-25 md:w-[250px] md:group-hover:bottom-23 lg:bottom-25 lg:group-hover:bottom-23 xl:bottom-22 xl:w-[250px] xl:group-hover:bottom-22 2xl:bottom-20 2xl:w-[447px] 2xl:group-hover:bottom-18"
+                className="absolute bottom-30  h-auto w-[150px] sm:bottom-30  sm:w-[200px] md:bottom-25 md:w-[250px] md:group-hover:bottom-23 lg:bottom-25 lg:group-hover:bottom-23 xl:bottom-22 xl:w-[250px] xl:group-hover:bottom-22 2xl:bottom-20 2xl:w-[370px] 2xl:group-hover:bottom-18"
                 initial={{ y: '100vw', opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{
@@ -104,7 +104,7 @@ function Token() {
             onClick={() => toggleOpacity(2)}
           >
             <div
-              className={`absolute bottom-70 right-8 2xl:h-30 sm:h-20 text-center rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-4  2xl:px-10 2xl:py-10text-center text-white transition-opacity duration-300 sm:bottom-80 sm:right-20 md:bottom-84 md:right-30 md:opacity-0 md:group-hover:opacity-100 lg:bottom-82 lg:right-50 lg:text-[15px] xl:bottom-75 xl:right-40 xl:w-[200px] 2xl:bottom-115 2xl:right-65 ${activeIndex === 2 ? 'opacity-100' : 'opacity-0'} `}
+              className={`absolute bottom-70 right-8 2xl:h-30 sm:h-20 text-center rounded-2xl bg-gradient-to-b from-[#4B181B] from-30% via-[#9B282F] to-[#B13940] px-4 py-4  2xl:px-10 2xl:py-10text-center text-white transition-opacity duration-300 sm:bottom-80 sm:right-20 md:bottom-84 md:right-30 md:opacity-0 md:group-hover:opacity-100 lg:bottom-82 lg:right-50 lg:text-[15px] xl:bottom-75 xl:right-40 xl:w-[200px] 2xl:bottom-100 2xl:right-62 ${activeIndex === 2 ? 'opacity-100' : 'opacity-0'} `}
             >
               <p className="font-jel">0%</p>
               <p className="font-jel">Liquiity Tax</p>
@@ -114,7 +114,7 @@ function Token() {
               <motion.img
                 src={Toke3}
                 alt="Token 3"
-                className="absolute bottom-35  right-2 h-auto w-[150px] sm:bottom-35  sm:right-10 sm:w-[200px] md:bottom-30 md:right-15 md:w-[250px] lg:bottom-30 lg:right-35 md:group-hover:bottom-28 lg:group-hover:bottom-28 xl:bottom-22 xl:w-[250px] xl:group-hover:bottom-22 2xl:bottom-20  2xl:w-[447px] 2xl:group-hover:bottom-18"
+                className="absolute bottom-35  right-2 h-auto w-[150px] sm:bottom-35  sm:right-10 sm:w-[200px] md:bottom-30 md:right-15 md:w-[250px] lg:bottom-30 lg:right-35 md:group-hover:bottom-28 lg:group-hover:bottom-28 xl:bottom-22 xl:w-[250px] xl:group-hover:bottom-22 2xl:bottom-20  2xl:w-[370px] 2xl:group-hover:bottom-18"
                 initial={{ x: '100vw', opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{
