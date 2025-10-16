@@ -27,7 +27,7 @@ const container = {
 
 function Home() {
   return (
-    <div className="relative z-0 h-[100vh] overflow-x-hidden overflow-y-hidden">
+    <div className="relative z-0 min-h-[100svh] md:min-h-[100vh] overflow-x-hidden overflow-y-hidden">
       {/* 🎭 Realistic Stage Curtains */}
       <motion.div
         className="absolute top-0 left-0 z-[50] h-full w-1/2"

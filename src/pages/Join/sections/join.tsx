@@ -61,7 +61,7 @@ function Join() {
 
         {/* Foreground Content */}
         <div className="flex min-h-screen items-start justify-center px-4 sm:px-6 md:px-0">
-          <div className="absolute top-[20%] xl:top-[20%] max-w-[300px] text-center sm:max-w-[500px] md:max-w-[600px] lg:max-w-[1000px] xl:max-w-[1000px] 2xl:max-w-[1592px]">
+          <div className="absolute top-[10%] sm:top-[20%] xl:top-[20%] max-w-[300px] text-center sm:max-w-[500px] md:max-w-[600px] lg:max-w-[1000px] xl:max-w-[1000px] 2xl:max-w-[1592px]">
             {/* Heading */}
             <motion.h1
               className="font-jack mx-auto text-4xl font-normal break-words text-white sm:text-[45px] md:text-[40px] 2xl:text-[150px]"
