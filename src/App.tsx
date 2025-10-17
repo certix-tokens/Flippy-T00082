@@ -1,5 +1,5 @@
 import NavItem from './components/navbar/navItem';
-import ScreenSizeIndicator from './components/ScreenSizeIndicator';
+// import ScreenSizeIndicator from './components/ScreenSizeIndicator';
 import Home from './pages/Home/index'
 import Footer from './components/navbar/footer'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -26,7 +26,7 @@ function App() {
             </Routes>
           </main>
 
-          <ScreenSizeIndicator />
+          {/* <ScreenSizeIndicator /> */}
 
           <Footer />
         </div>
