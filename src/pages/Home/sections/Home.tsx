@@ -143,7 +143,7 @@ function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            <div className="h-40 w-[345px] rounded-2xl bg-[#9318182B]/17 p-6 backdrop-blur-sm md:w-[800px] xl:-mt-50 xl:h-40 2xl:-mt-50 2xl:h-auto 2xl:w-[1000px]">
+            <div className="h-40 w-[345px] rounded-2xl bg-[#9318182B]/17 p-6 backdrop-blur-sm 2xl:backdrop-blur-md md:w-[800px] xl:-mt-50 xl:h-40 2xl:-mt-50 2xl:h-auto 2xl:w-[1000px]">
               <p className="font-jel mb-[20px] hidden px-4 text-[11px] font-medium text-white md:block md:text-[14px] 2xl:text-[20px]">
                 Welcome to Flippy!
               </p>
